@@ -1,0 +1,147 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.login{
+    height: 100vh;
+}
+
+.header h1 {
+    position: absolute;
+width: 95px;
+height: 45px;
+left: 325px;
+top: 125px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 140%;
+text-align: right;
+letter-spacing: 0.3px;
+}
+
+.header p{
+    position: absolute;
+width: 305px;
+height: 34px;
+left: 225px;
+top: 175px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 140%;
+/* identical to box height, or 34px */
+
+text-align: right;
+letter-spacing: 0.3px;
+
+color: #6D6B6B;
+}
+
+.login-form-e input{
+    position: absolute;
+width: 600px;
+height: 62px;
+left: 100px;
+top: 250px;
+
+background: rgba(58, 58, 58, 0.09);
+border-radius: 8px;
+}
+
+.login-form-p input{
+    position: absolute;
+width: 600px;
+height: 61px;
+left: 100px;
+top: 325px;
+
+background: rgba(58, 58, 58, 0.09);
+border-radius: 8px;
+}
+
+.login-form-p a{
+    position: absolute;
+width: 137px;
+height: 22px;
+left: 560px;
+top: 405px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 140%;
+/* or 22px */
+
+text-align: right;
+letter-spacing: 0.3px;
+
+color: #0C61F7;
+
+}
+
+.login-form-p .sign-in {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 600px;
+    height: 56px;
+    left: 100px;
+    top: 440px;
+    
+    background: #0C61F7;
+    border: none;
+    border-radius: 8px;
+    
+    color : #fff;
+}
+
+ span p a{
+    width: 390px;
+    height: 28px;
+    left: 200px;
+    top: 1000px;
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    /* identical to box height, or 28px */
+    
+    text-align: right;
+    letter-spacing: 0.3px;
+    
+    
+}
+
+.login-right {
+
+    background-color: #35EB73;
+    
+}
+
+.gambar{
+     position: absolute;
+     width: 340px;
+     height: 400px;
+     left: 940px;
+     top: 180px;
+    
+}
+
+.ellipse{
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    left: 900px;
+    top: 380px;
+    border-radius: 165px/120px;
+    background-color: #84EBA7;
+}
+
