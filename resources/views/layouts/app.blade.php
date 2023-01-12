@@ -98,31 +98,43 @@
     </div>
     <footer class="d-flex py-3 border-top" style="background-color:#FFFF">
         <div class="align-items-center ml-3">
-            <p style="font-family: 'Montserrat'; font-weight: 500; font-size: 24px; display: flex; color: #0F172A; ">
+            <div class="container">
+                <p style="font-family: 'Montserrat'; font-weight: 500; font-size: 24px; display: flex; color: #0F172A; ">
               About Us
-            </p>
-            <p style="font-family: 'Montserrat';
+                </p>
+                <p style="font-family: 'Montserrat';
                       font-style: normal;
                       font-weight: 500;
                       font-size: 20px;
                       line-height: 135%;
                       ">
                 Perpus SMK 5 Kepanjen
-            </p>
-            <div class="row">
-            <p style="font-family: 'Montserrat';
-                      font-style: normal;
-                      font-weight: 400;
-                      font-size: 20px;
-                      line-height: 32px;
-                      color: #0F172A;
-                      ">
-                There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form, by injected humour,
-                or randomised words which don't look even slightly believable.
-            </p>
+                </p>
+                <div class="row">
+                    <div class="col-5">
+                    <p style="font-family: 'Montserrat';
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 20px;
+                            line-height: 32px;
+                            color: #0F172A;
+                            ">
+                        There are many variations of passages of Lorem Ipsum available,
+                        but the majority have suffered alteration in some form, by injected humour,
+                        or randomised words which don't look even slightly believable.
+                    </p>
+                    </div>
+                    <div class="social-links text-md-right pt-3 pt-md-0"">
+                            <a><img src="img/library.png"></a><a> JL. Cintaku Padamu </a>
+                            <a><img src="img/Vector.png"></a><a> +628xxxxx </a>
+                            <a><img src="img/mail.png"></a><a> mail@smkperpusonline.sch.id </a>
+                      </div>
+                </div>
+                <div>
+                    <img src="img/Vector 5.png">
+                </div>
+                <span class="text-muted">Copyright © 2023 Perpus SMK 5 Kepanjen</span>
             </div>
-            <span class="text-muted">Copyright © 2023 Perpus SMK 5 Kepanjen</span>
         </div>
     </footer>
 </body>

@@ -39,3 +39,7 @@ Route::get('/profil', function () {
 Route::get('/edit_profil', function () {
     return view('edit_profil');
 });
+
+Route::get('/admin', function () {
+    return view('admin');
+});

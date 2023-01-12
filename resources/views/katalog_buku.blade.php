@@ -1,11 +1,39 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container" style="text-align: center">
+    <div class="container" style="text-align: center;margin-bottom: 5%">
         <img src="img/H1katalog.png" alt="Cari Lomba" style="width: 40%; height:40%;margin-top:5%"> <br>
         <img src="img/H2katalog.png" alt="SIMBA" style="width: 50%; height:50%">
 
-
+        <div class="container">
+            <form action="" method="POST">
+                <div class="row" style="margin-left: 35%;margin-top: 2.5%">
+                    <div class="col-xl-auto">
+                        <div class="container"
+                            style="
+                            background: #EBE8E8;
+                            border-radius: 10px;
+                            margin-top: 20px;
+                            " >
+                            <div class="">
+                                <a href="">
+                                    <img src="img/Search.svg" alt=""
+                                    style="
+                                    ">
+                                </a>
+                                <input type="text" id="cari_buku" name="" placeholder="Cari Nama Buku Yang Anda Ingin Pinjam"
+                                style="
+                                    padding: 12px 20px;
+                                    margin: 8px 0;
+                                    border: none;
+                                    box-sizing: border-box;
+                                    background: #EBE8E8;
+                                    text-align: center;
+                                ">
+                            </div>
+                        </div>
+                    </div>
+                </div>
         <div>
             <img src="img/Hpopuler.png" alt="Buku Terpopuler" style="margin-top:5% ">
         </div>

@@ -33,7 +33,7 @@
                     </div>
                     <div class="col-2" style="margin-top:2%;">
                         <a href="edit_profil">
-                            <img src="img/edit.png" alt="edit" style="width: 50%;height: 100%;">
+                            <img src="img/edit.png" alt="edit" style="width: 25%;height: 50%;margin-left: 30px;">
                         </a>
                     </div>
                 </div>
