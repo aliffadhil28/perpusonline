@@ -13,10 +13,10 @@
                             <b>Nama</b>
                         </p>
                         <p style="font-family: 'Montserrat';color: #FFFFFF;margin-top:-20%;font-size:125%">
-                            Jurusan
+                            NIK
                         </p>
                         <p style="font-family: 'Montserrat';color: #FFFFFF;margin-top:-20%;font-size:125%">
-                            Instansi
+                            No.Hp
                         </p>
                     </div>
                 </div>
@@ -50,27 +50,17 @@
                     </div>
                     <div class="col-10" style="margin-left:3%">
                         <p>
-                            <b>Domisili</b> <br> Kediririri
+                            <b>NIK</b> <br> 3506xxxxxxx
                         </p>
                     </div>
                     <div class="col-10" style="margin-left:3%">
                         <p>
-                            <b>Asal Instansi</b> <br> YUEM
+                            <b>No. Hp</b> <br> 081xxxx
                         </p>
                     </div>
                     <div class="col-10" style="margin-left:3%">
                         <p>
-                            <b>Jenjang Pendidikan</b><br> S3
-                        </p>
-                    </div>
-                    <div class="col-10" style="margin-left:3%">
-                        <p>
-                            <b>Kelas/Semester</b> <br> 3
-                        </p>
-                    </div>
-                    <div class="col-10" style="margin-left:3%">
-                        <p>
-                            <b>No. Telepon</b> <br> 081xxxx
+                            <b>Alamat</b> <br> Sukorejo Joss
                         </p>
                     </div>
                 </div>
