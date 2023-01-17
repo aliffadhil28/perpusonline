@@ -43,3 +43,19 @@ Route::get('/edit_profil', function () {
 Route::get('/admin', function () {
     return view('admin');
 });
+
+Route::get('/admin_katalog', function () {
+    return view('admin_katalog');
+});
+
+Route::get('/admin_anggota', function () {
+    return view('admin_anggota');
+});
+
+Route::get('/admin_buku_tamu', function () {
+    return view('admin_buku_tamu');
+});
+
+Route::get('/admin_log_aktivitas', function () {
+    return view('admin_log_aktivitas');
+});
