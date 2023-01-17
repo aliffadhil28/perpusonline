@@ -7,29 +7,20 @@
 }
 
 .header h1 {
-    position: absolute;
-width: 95px;
-height: 45px;
-left: 325px;
-top: 125px;
 
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 600;
 font-size: 32px;
 line-height: 140%;
-text-align: right;
+text-align: center;
 letter-spacing: 0.3px;
 }
 
 .header p{
-    position: absolute;
-width: 305px;
-height: 34px;
-left: 225px;
-top: 175px;
-
-font-family: 'Montserrat';
+margin-bottom: 60px;
+margin-right: 18%;
+text-align: center;
 font-style: normal;
 font-weight: 500;
 font-size: 24px;
@@ -43,57 +34,41 @@ color: #6D6B6B;
 }
 
 .login-form-e input{
-    position: absolute;
-width: 600px;
-height: 62px;
-left: 100px;
-top: 250px;
-
+    margin-top: 60px;
 background: rgba(58, 58, 58, 0.09);
 border-radius: 8px;
 }
 
 .login-form-p input{
-    position: absolute;
-width: 600px;
-height: 61px;
-left: 100px;
-top: 325px;
 
+    margin-top: 20px;
+    margin-bottom: 23px;
 background: rgba(58, 58, 58, 0.09);
 border-radius: 8px;
 }
 
 .login-form-p a{
-    position: absolute;
-width: 137px;
-height: 22px;
-left: 560px;
-top: 405px;
-
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 140%;
-/* or 22px */
-
-text-align: right;
-letter-spacing: 0.3px;
-
-color: #0C61F7;
+    margin-top: 23px;
+    margin-bottom: 23px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    /* or 22px */
+    
+    text-align: right;
+    letter-spacing: 0.3px;
+    
+    color: #0C61F7;
+    
 
 }
 
 .login-form-p .sign-in {
     box-sizing: border-box;
-
-    position: absolute;
-    width: 600px;
     height: 56px;
-    left: 100px;
-    top: 440px;
-    
+    width: 100%;
+    margin-top: 23px;
     background: #0C61F7;
     border: none;
     border-radius: 8px;
@@ -102,18 +77,12 @@ color: #0C61F7;
 }
 
  span p a{
-    width: 390px;
-    height: 28px;
-    left: 200px;
-    top: 1000px;
-    
-    font-family: 'Montserrat';
+
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
     line-height: 140%;
     /* identical to box height, or 28px */
-    
     text-align: right;
     letter-spacing: 0.3px;
     
