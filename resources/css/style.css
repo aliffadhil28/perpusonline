@@ -1,0 +1,113 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.login{
+    height: 100vh;
+}
+
+.header h1 {
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 140%;
+text-align: center;
+letter-spacing: 0.3px;
+}
+
+.header p{
+margin-bottom: 60px;
+margin-right: 18%;
+text-align: center;
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 140%;
+/* identical to box height, or 34px */
+
+text-align: right;
+letter-spacing: 0.3px;
+
+color: #6D6B6B;
+}
+
+.login-form-e input{
+    margin-top: 60px;
+background: rgba(58, 58, 58, 0.09);
+border-radius: 8px;
+}
+
+.login-form-p input{
+
+    margin-top: 20px;
+    margin-bottom: 23px;
+background: rgba(58, 58, 58, 0.09);
+border-radius: 8px;
+}
+
+.login-form-p a{
+    margin-top: 23px;
+    margin-bottom: 23px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+   
+    
+    text-align: right;
+    letter-spacing: 0.3px;
+    
+    color: #0C61F7;
+    
+
+}
+
+.login-form-p .sign-in {
+    box-sizing: border-box;
+    height: 56px;
+    width: 100%;
+    margin-top: 23px;
+    background: #0C61F7;
+    border: none;
+    border-radius: 8px;
+    
+    color : #fff;
+}
+
+ span p a{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    /* identical to box height, or 28px */
+    text-align: right;
+    letter-spacing: 0.3px;
+    
+    
+}
+
+.login-right {
+
+    background-color: #35EB73;
+    
+}
+
+.ellipse .gambar{
+     width: 340px;
+     height: 400px;
+     margin: 25% 12% 12% 25%;
+    
+}
+
+.ellipse{
+    width: 400px;
+    height: 200px;
+    /* left: 50%;
+    margin-top: 50%; */
+    margin: 50% 25% 25% 25%;
+    border-radius: 165px/120px;
+    background-color: #84EBA7;
+}
+
