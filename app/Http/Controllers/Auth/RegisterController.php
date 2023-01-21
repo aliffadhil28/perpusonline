@@ -77,7 +77,7 @@ class RegisterController extends Controller
             'no_hp' =>$data['no_hp'],
             'nik' =>$data['nik'],
             'alamat' =>$data['alamat'],
-            'profile_image' => 'https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png',
+            'foto_profil' => 'https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png',
         ]);
     }
 }

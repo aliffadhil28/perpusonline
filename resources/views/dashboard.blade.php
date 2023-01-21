@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/style-d.css">
+    <link rel="stylesheet" href="{{asset('css/style-d.css')}}">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -18,18 +18,18 @@
         <div class="container">
             <div class="box-navigation">
                 <div class="box">
-                    <h1> <a href=""><img src="Gambar/logo.png" alt=""></a></h1>
+                    <h1> <a href=""><img src="{{asset('img/logo.png')}}" alt=""></a></h1>
                 </div>
-                <div class="box">               
+                <div class="box">
                     <ul><li><a href="">Beranda</a></li>
                         <li><a href="">Buku Tamu</a></li>
                         <li><a href="">Koleksi Buku</a></li>
                         <li><a href="">Perpustakaan</a></li>
-                    </ul>                    
+                    </ul>
                 </div>
                 <div class="box">
                   <ul>
-                    <li><a href="">Masuk / Daftar</a></li>         
+                    <li><a href="">Masuk / Daftar</a></li>
                   </ul>
               </div>
             </div>
@@ -54,7 +54,7 @@
           </p>
         </div>
         <div class="box">
-          <a href=""><img src="Gambar/perpus.jfif" alt="perpustakaan"></a>
+          <a href=""><img src="{{asset('img/perpus.jfif')}}" alt="perpustakaan"></a>
         </div>
       </div>
     </div>

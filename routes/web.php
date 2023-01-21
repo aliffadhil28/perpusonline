@@ -20,7 +20,7 @@ Route::get('/', function () {
 Route::get('/login', [App\Http\Controllers\UserController::class, 'showLogin']);
 Route::get('/register', [App\Http\Controllers\UserController::class, 'showRegister']);
 Route::get('/profil', [App\Http\Controllers\UserController::class, 'showProfil'])->name('profil');
-Route::post('update_profil', [App\Http\Controllers\UserController::class, 'updateProfil']);
+Route::post('profil', [App\Http\Controllers\UserController::class, 'updateProfil'])->name('profil');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

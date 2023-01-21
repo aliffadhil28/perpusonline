@@ -7,7 +7,7 @@
                 style=";border-radius:20px;background: linear-gradient(90deg, #35EB73 0%, #65DDC7 100%);filter: drop-shadow(8px 4px 35px rgba(56, 125, 130, 0.44));">
                 <div class="row">
                     <div class="col-2" style="margin: 3%;margin-top:5%">
-                        <img src="img/profil.png" alt="gambar profil">
+                        <img src="{{asset(auth()->user()->foto_profil)}}" width="100" alt="gambar profil" style="border-radius: 20px">
                     </div>
                     <div class="col-2" style="margin: 3%;margin-top:5%">
                         <p style="font-family: 'Montserrat';color: #FFFFFF;font-size:150%">
@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="row" style="font-family: 'Montserrat'; font-size: 140%; line-height: 24px;">
-                    <form action="{{ url('update_profil') }}" method="post">
+                    <form action="{{route('profil')}}" method="POST">
                         @csrf
                         <div class="col-10" style="margin-left:3%;margin-top:3%">
                             <label for="nama" class="form-label">Nama Lengkap</label>
