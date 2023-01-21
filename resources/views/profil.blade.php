@@ -3,10 +3,13 @@
 @section('content')
     <div class="container" style="margin-bottom:2%">
         <div class="row" style="margin-top:3%;">
-            <div class="col-7" style=";border-radius:20px;background: linear-gradient(90deg, #35EB73 0%, #65DDC7 100%);filter: drop-shadow(8px 4px 35px rgba(56, 125, 130, 0.44));">
+            <div class="col-7"
+                style=";border-radius:20px;background: linear-gradient(90deg, #35EB73 0%, #65DDC7 100%);filter: drop-shadow(8px 4px 35px rgba(56, 125, 130, 0.44));">
                 <div class="row">
                     <div class="col-2" style="margin: 3%;margin-top:5%">
-                        <img src="img/profil.png" alt="gambar profil">
+                        @if (auth()->user()->foto_profil != null)
+                            <img src="{{ asset('default_profil/'.auth()->user()->foto_profil) }}" width="100" style="border-radius: 20px">
+                        @endif
                     </div>
                     <div class="col-2" style="margin: 3%;margin-top:5%">
                         <p style="font-family: 'Montserrat';color: #FFFFFF;font-size:150%">
@@ -24,10 +27,12 @@
         </div>
 
         <div class="row">
-            <div class="col-7" style="margin-left:%; border-radius:20px;filter: box-shadow: 0 3px 20px rgba(0, 0, 0, .5);background: #FFFFFF;margin-top:5%;">
+            <div class="col-7"
+                style="margin-left:%; border-radius:20px;filter: box-shadow: 0 3px 20px rgba(0, 0, 0, .5);background: #FFFFFF;margin-top:5%;">
                 <div class="row">
                     <div class="col-10">
-                        <h1 style="margin-left:3%; margin-top:5%;text-align: left;font-family: 'Montserrat'; font-weight: 700; font-size: 28px;line-height: 29px;letter-spacing: 0.17em; color: rgba(0, 0, 0, 0.58);">
+                        <h1
+                            style="margin-left:3%; margin-top:5%;text-align: left;font-family: 'Montserrat'; font-weight: 700; font-size: 28px;line-height: 29px;letter-spacing: 0.17em; color: rgba(0, 0, 0, 0.58);">
                             ABOUT ME
                         </h1>
                     </div>
@@ -40,33 +45,35 @@
                 <div class="row" style="font-family: 'Montserrat'; font-size: 140%; line-height: 24px;">
                     <div class="col-10" style="margin-left:3%;margin-top:3%">
                         <p>
-                            <b> Nama Lengkap</b> <br> Enrico Indra Sakti
+                            <b> Nama Lengkap</b> <br> {{ auth()->user()->name }}
                         </p>
                     </div>
                     <div class="col-10" style="margin-left:3%">
                         <p>
-                            <b>Email</b> <br> enrico@gmail.com
+                            <b>Email</b> <br> {{ auth()->user()->email }}
                         </p>
                     </div>
                     <div class="col-10" style="margin-left:3%">
                         <p>
-                            <b>NIK</b> <br> 3506xxxxxxx
+                            <b>NIK</b> <br> {{ auth()->user()->nik }}
                         </p>
                     </div>
                     <div class="col-10" style="margin-left:3%">
                         <p>
-                            <b>No. Hp</b> <br> 081xxxx
+                            <b>No. Hp</b> <br> {{ auth()->user()->no_hp }}
                         </p>
                     </div>
                     <div class="col-10" style="margin-left:3%">
                         <p>
-                            <b>Alamat</b> <br> Sukorejo Joss
+                            <b>Alamat</b> <br> {{ auth()->user()->alamat }}
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="col-4" style="border-radius:20px;filter: box-shadow: 0 3px 20px rgba(0, 0, 0, .5);background: #FFFFFF;margin-left:5%;margin-top:5%">
-                <h1 style="margin-left:3%; margin-top:5%;text-align: center;font-family: 'Montserrat'; font-weight: 700; font-size: 28px;line-height: 29px;letter-spacing: 0.17em; color: rgba(0, 0, 0, 0.58);">
+            <div class="col-4"
+                style="border-radius:20px;filter: box-shadow: 0 3px 20px rgba(0, 0, 0, .5);background: #FFFFFF;margin-left:5%;margin-top:5%">
+                <h1
+                    style="margin-left:3%; margin-top:5%;text-align: center;font-family: 'Montserrat'; font-weight: 700; font-size: 28px;line-height: 29px;letter-spacing: 0.17em; color: rgba(0, 0, 0, 0.58);">
                     BUKU YANG SEDANG DIPINJAM
                 </h1>
                 <div>

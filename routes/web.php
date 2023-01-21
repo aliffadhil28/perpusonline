@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/login', [App\Http\Controllers\UserController::class, 'showLogin']);
+Route::get('/register', [App\Http\Controllers\UserController::class, 'showRegister']);
+Route::get('/profil', [App\Http\Controllers\UserController::class, 'showProfil'])->name('profil');
+Route::post('update_profil', [App\Http\Controllers\UserController::class, 'updateProfil']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -59,3 +63,7 @@ Route::get('/admin_buku_tamu', function () {
 Route::get('/admin_log_aktivitas', function () {
     return view('admin_log_aktivitas');
 });
+
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
