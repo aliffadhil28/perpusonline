@@ -42,13 +42,13 @@
                             <a class="nav-link" href="dashboard" style="margin-left: 25px;font-size: 150%;font-family: 'Montserrat';font-style: normal;color: #111827;">{{ __('Beranda') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" style="margin-left: 25px;font-size: 150%;font-family: 'Montserrat';font-style: normal;color: #111827;">{{ __('Buku Tamu') }}</a>
+                            <a class="nav-link" href="/buku_tamu" style="margin-left: 25px;font-size: 150%;font-family: 'Montserrat';font-style: normal;color: #111827;">{{ __('Buku Tamu') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" style="margin-left: 25px;font-size: 150%;font-family: 'Montserrat';font-style: normal;color: #111827;">{{ __('Koleksi Buku') }}</a>
+                            <a class="nav-link" href="/koleksi_buku" style="margin-left: 25px;font-size: 150%;font-family: 'Montserrat';font-style: normal;color: #111827;">{{ __('Koleksi Buku') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" style="margin-left: 25px;font-size: 150%;font-family: 'Montserrat';font-style: normal;color: #111827;">{{ __('Perpustakaan') }}</a>
+                            <a class="nav-link" href="/perpustakaan" style="margin-left: 25px;font-size: 150%;font-family: 'Montserrat';font-style: normal;color: #111827;">{{ __('Perpustakaan') }}</a>
                         </li>
                     </ul>
 

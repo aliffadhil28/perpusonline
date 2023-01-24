@@ -7,10 +7,13 @@
                 style=";border-radius:20px;background: linear-gradient(90deg, #35EB73 0%, #65DDC7 100%);filter: drop-shadow(8px 4px 35px rgba(56, 125, 130, 0.44));">
                 <div class="row">
                     <div class="col-2" style="margin: 3%;margin-top:5%">
-                        {{-- @if (auth()->user()->foto_profil != null)
-                            <img src="{{ asset('default_profil/'.auth()->user()->foto_profil) }}" width="100" style="border-radius: 20px">
-                        @endif --}}
-                        <img src="{{asset(auth()->user()->foto_profil)}}" width="100" alt="gambar profil" style="border-radius: 20px">
+                        @if (auth()->user()->foto_profil != null)
+                            <img src="{{ asset('default_profil/profil.png') }}" width="100" style="border-radius: 20px">
+                        @else
+                            <img src="{{ auth()->user()->foto_profil }}" alt="Profil" width="100"
+                                style="border-radius: 20px">
+                        @endif
+                        {{-- <img src="{{asset(auth()->user()->foto_profil)}}" width="100" alt="gambar profil" style="border-radius: 20px"> --}}
                     </div>
                     <div class="col-2" style="margin: 3%;margin-top:5%">
                         <p style="font-family: 'Montserrat';color: #FFFFFF;font-size:150%">

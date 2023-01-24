@@ -20,7 +20,6 @@ Route::get('/', function () {
 Route::get('/login', [App\Http\Controllers\UserController::class, 'showLogin']);
 Route::get('/register', [App\Http\Controllers\UserController::class, 'showRegister']);
 Route::get('/profil', [App\Http\Controllers\UserController::class, 'showProfil'])->name('profil');
-Route::post('profil', [App\Http\Controllers\UserController::class, 'updateProfil'])->name('profil');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -31,6 +30,8 @@ Route::get('/katalog', function () {
 Route::get('/katalog', function () {
     return view('katalog_buku');
 });
+
+Route::post('/profil', [App\Http\Controllers\UserController::class, 'updateProfil'])->name('profil');
 
 Route::get('/buku_pinjaman', function () {
     return view('buku_dipinjam');
