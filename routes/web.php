@@ -63,6 +63,10 @@ Route::get('/admin_log_aktivitas', function () {
     return view('admin_log_aktivitas');
 });
 
+Route::get('/form_buku_tamu', function () {
+    return view('form_buku_tamu');
+});
+
 // Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
