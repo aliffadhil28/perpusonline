@@ -53,9 +53,7 @@ Route::get('/admin_katalog', function () {
     return view('admin_katalog');
 });
 
-Route::get('/admin_anggota', function () {
-    return view('admin_anggota');
-});
+Route::get('/admin_anggota', [App\Http\Controllers\UserController::class,'showUsers ']);
 
 Route::get('/admin_buku_tamu', function () {
     return view('admin_buku_tamu');

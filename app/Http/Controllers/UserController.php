@@ -55,4 +55,11 @@ class UserController extends Controller
 
         return view('profil');
     }
+
+    public function showUsers()
+    {
+        $users = User::all();
+        return view('admin_anggota', compact('users'));
+
+    }
 }
