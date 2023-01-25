@@ -47,9 +47,9 @@
                     </div>
                 </div>
                 <div class="row" style="font-family: 'Montserrat'; font-size: 140%; line-height: 24px;">
-                    <form action="{{route("profil")}}" method="post">
+                    <form action="{{route("profil.update")}}" method="POST">
                         @csrf
-                        {{-- @method('post') --}}
+                        {{-- @method('put') --}}
                         <div class="col-10" style="margin-left:3%;margin-top:3%">
                             <label for="nama" class="form-label">Nama Lengkap</label>
                             <input type="text" id="nama" aria-describedby="emailHelp"

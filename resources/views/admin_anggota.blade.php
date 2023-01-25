@@ -20,8 +20,16 @@
     <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous">
+    </script>
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+    {{-- Ajax --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
 </head>
 
@@ -34,7 +42,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin') }}">
                 <div class="sidebar-brand-text mx-3">Admin Perpus SMK 5 Kepanjen</div>
             </a>
 
@@ -43,7 +51,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="{{ route('admin') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -186,7 +194,7 @@
                                     <div class="input-group">
                                         <input type="text" class="form-control bg-light border-0 small"
                                             placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
+                                            aria-describedby="basic-addon2" id="search" name="search">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="button">
                                                 <i class="fas fa-search fa-sm"></i>
@@ -373,11 +381,11 @@
                                         <tr>
                                             <th>Nama</th>
                                             <th>Email</th>
-                                            <th>Password</th>
-                                            <th>NIK</th>
-                                            <th>Foto_Profil</th>
-                                            <th>No.Hp</th>
                                             <th>Alamat</th>
+                                            <th>NIK</th>
+                                            {{-- <th>Foto_Profil</th> --}}
+                                            <th>No.Hp</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     {{-- <tfoot>
@@ -399,7 +407,24 @@
                                                 <td>{{ $anggota->alamat }}</td>
                                                 <td>{{ $anggota->nik }}</td>
                                                 <td>{{ $anggota->no_hp }}</td>
-                                                <td>{{ $anggota->nik }}</td>
+                                                <td>
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-primary dropdown-toggle" type="button"
+                                                            id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                            aria-expanded="false">
+                                                            Action
+                                                        </button>
+                                                        <ul class="dropdown-menu"
+                                                            aria-labelledby="dropdownMenuButton1">
+                                                            <li><a class="dropdown-item" href="#">Detail
+                                                                    user</a></li>
+                                                            <li><a class="dropdown-item" href="#">Edit User</a>
+                                                            </li>
+                                                            <li><a class="dropdown-item" href="#">Delete
+                                                                    User</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
                                             </tr>
                                         @endforeach
                                     </tbody>
@@ -472,6 +497,30 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
 
+    {{-- Live Search User --}}
+
+    <script type="text/javascript">
+        $('#search').on('keyup', function() {
+            $value = $(this).val();
+            $.ajax({
+                type: 'get',
+                url: '{{ URL::to('search') }}',
+                data: {
+                    'search': $value
+                },
+                success: function(data) {
+                    $('tbody').html(data);
+                }
+            });
+        })
+    </script>
+    <script type="text/javascript">
+        $.ajaxSetup({
+            headers: {
+                'csrftoken': '{{ csrf_token() }}'
+            }
+        });
+    </script>
 </body>
 
 </html>
