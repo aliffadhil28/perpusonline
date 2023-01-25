@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Auth;
 
 Route::middleware('auth')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('index');
+    Route::post('guestbook', [HomeController::class, 'storeGuestBook'])->name('guestbook');
+    Route::get('/katalog', [HomeController::class, 'showKatalog'])->name('katalog');
 });
 
 Route::get('/login', [App\Http\Controllers\UserController::class, 'showLogin']);
