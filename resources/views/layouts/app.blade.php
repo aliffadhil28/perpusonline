@@ -18,9 +18,8 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-    <header>
-        <nav
-            class="navbar navbar-light sticky-top navbar-expand-md bg-faded justify-content-center border-bottom shadow-sm">
+    <header class="sticky-top bg-white">
+        <nav class="navbar navbar-light navbar-expand-md bg-faded justify-content-center border-bottom shadow-sm">
             <div class="container p-2">
                 <a href="{{ route('index') }}" class="navbar-brand d-flex w-50 me-auto">{{ config('app.name') }}</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
