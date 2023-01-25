@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use App\Models\GuestBook;
 use Illuminate\Http\Request;
 
@@ -27,9 +28,21 @@ class HomeController extends Controller
         return view('user.index');
     }
 
-    public function showKatalog()
+    public function showKatalog(Request $request)
     {
+        if ($request->has('q') && $request->q != '') {
+            $data = [
+                'books' => Book::where('title', 'like', '%' . $request->q . '%')->get(),
+            ];
+        } else {
+            $data = [
+                'randomBooks' => Book::inRandomOrder()->take(15)->get(),
+                'categories' => Book::select('category')->distinct()->get(),
+                'books' => Book::all(),
+            ];
+        }
 
+        return view('katalog_buku', $data);
     }
 
     public function storeGuestBook(Request $request)

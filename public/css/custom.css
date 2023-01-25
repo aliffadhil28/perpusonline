@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
 
 body {
     font-family: "Montserrat", sans-serif;
@@ -156,4 +157,102 @@ input[type="date"]::-webkit-clear-button {
 
 .notify {
     z-index: 9999 !important;
+}
+
+.section-koleksi-buku h1.title {
+    font-weight: 800;
+    font-size: 32px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    color: #0f172a;
+    margin-bottom: 23px;
+}
+
+.section-koleksi-buku h1.subtitle {
+    font-weight: 600;
+    font-size: 24px;
+    color: #0f172a;
+}
+
+.section-koleksi-buku form .input-group {
+    background-color: #ebe8e8;
+    border-radius: 5px;
+}
+
+.section-koleksi-buku form .input-group .input-group-text {
+    background-color: #ebe8e8;
+    border: none;
+    color: #a5a5a5;
+}
+
+.section-koleksi-buku form .input-group input {
+    background-color: #ebe8e8;
+    border: none;
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #a5a5a5;
+}
+
+.section-koleksi-buku .text-book-category {
+    font-weight: 700;
+    font-size: 32px;
+    color: #0f172a;
+}
+
+.mt-80px {
+    margin-top: 80px;
+}
+
+.mt-35px {
+    margin-top: 35px !important;
+}
+
+.card-book {
+    border-radius: 20px;
+}
+
+.card-book img {
+    border-radius: 20px;
+    object-fit: cover;
+    width: 198px;
+    height: 306px;
+}
+
+.card-book .card-body {
+    padding: unset;
+    margin-top: 10px;
+}
+
+.card-book .card-body .card-title {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #19191b;
+    margin-bottom: unset;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.card-book .card-body .card-text {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: #9d9d9d;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.card-book .card-footer {
+    border: none;
+    padding: unset;
+    background-color: unset;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-book .card-footer .btn {
+    border-radius: 18px;
 }
