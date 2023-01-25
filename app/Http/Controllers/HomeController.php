@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Collection;
 use App\Models\GuestBook;
 use Illuminate\Http\Request;
 
@@ -61,5 +62,12 @@ class HomeController extends Controller
 
         notify()->success('Guest Book Berhasil Ditambahkan');
         return redirect()->back();
+    }
+
+    public function showBukuPinjaman()
+    {
+        $collections = Collection::where('user_id', auth()->user()->id)->orderBy('borrowed_at', 'desc')->get();
+
+        return view('buku_dipinjam', compact('collections'));
     }
 }

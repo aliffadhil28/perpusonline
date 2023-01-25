@@ -39,8 +39,8 @@
                         <li class="nav-item @if (Request::is('katalog*')) active @endif">
                             <a class="nav-link" href="{{ route('katalog') }}">Koleksi Buku</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Perpustakaan</a>
+                        <li class="nav-item @if (Request::is('buku-pinjaman*')) active @endif">
+                            <a class="nav-link" href="{{ route('buku-pinjaman') }}">Perpustakaan</a>
                         </li>
                     </ul>
                     <div class="nav navbar-nav ms-auto w-100 justify-content-end">

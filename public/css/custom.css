@@ -257,3 +257,9 @@ input[type="date"]::-webkit-clear-button {
 .card-book .card-footer .btn {
     border-radius: 18px;
 }
+
+.text-borrow {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+}

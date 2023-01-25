@@ -19,6 +19,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('index');
     Route::post('guestbook', [HomeController::class, 'storeGuestBook'])->name('guestbook');
     Route::get('/katalog', [HomeController::class, 'showKatalog'])->name('katalog');
+    Route::get('/buku-pinjaman', [HomeController::class, 'showBukuPinjaman'])->name('buku-pinjaman');
 });
 
 Route::get('/login', [App\Http\Controllers\UserController::class, 'showLogin']);
@@ -29,10 +30,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::post('/profil', [App\Http\Controllers\UserController::class, 'update'])->name('profil.update');
-
-Route::get('/buku_pinjaman', function () {
-    return view('buku_dipinjam');
-});
 
 Route::get('/edit_profil', [App\Http\Controllers\UserController::class, 'editProfil']);
 
