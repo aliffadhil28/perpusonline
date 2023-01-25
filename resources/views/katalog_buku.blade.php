@@ -11,7 +11,7 @@
         <h1 class="text-center text-uppercase mt-5 title">Katalog Buku</h1>
         <h1 class="text-center subtitle">Kumpulan buku yang bisa dipinjam di PerpusOnline ada di bawah ini</h1>
 
-        <div class="container mt-80px">
+        <div class="container mt-3">
             <div class="row d-flex justify-content-center">
                 <div class="col-4">
                     <form action="" method="get">
@@ -25,7 +25,7 @@
                     </form>
                 </div>
             </div>
-            <div class="row mt-35px">
+            <div class="row mt-80px">
                 @if (\Request::has('q') && \Request::get('q') != '')
                     <div class="row">
                         @foreach ($books as $book)
