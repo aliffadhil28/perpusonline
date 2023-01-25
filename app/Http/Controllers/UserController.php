@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 // use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Auth;
+use DB;
 
 class UserController extends Controller
 {
@@ -29,31 +30,31 @@ class UserController extends Controller
         return view('profil',compact('user','foto_profil'));
     }
 
-    public function updateProfil(Request $request)
+    public function editProfil()
     {
-        $request->validate([
-            'foto_profil' => 'mimes:jpg,jpeg,png,svg',
-        ]);
+        return view('edit_profil');
+    }
 
-        $id_user = Auth::user()->id;
-        $user = User::find($id_user);
-
-        if ($request->hasFile('foto_profil')) {
-            $foto = $request->file('foto_profil');
-            $ubahNama = time().$foto->getClientOriginalName();
-            $foto->move('foto_profil',$ubahNama);
-            $user->foto_profil = $ubahNama;
+    public function update(User $user,Request $request)
+    {
+        $user = auth()->user();
+        if($request->hasFile('foto_profil')){
+            $foto_profil = $request->file('foto_profil');
+            $nama_foto = time().'.'.$foto_profil->getClientOriginalExtension();
+            $path = 'public/foto_profil/';
+            $foto_profil->move($path, $nama_foto);
+            $user->foto_profil = $nama_foto;
             $user->save();
         }
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'nik' => $request->nik,
+            'alamat' => $request->alamat,
+            'no_hp' => $request->no_hp,
+        ]);
 
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->nik = $request->nik;
-        $user->alamat = $request->alamat;
-        $user->no_hp = $request->no_hp;
-        $user->save();
-
-        return view('profil');
+        return view('profil')->with('message','Your Profil had been updated');
     }
 
     public function showUsers()
@@ -61,5 +62,24 @@ class UserController extends Controller
         $users = User::all();
         return view('admin_anggota', compact('users'));
 
+    }
+
+    public function search(Request $request)
+    {
+        if ($request->ajax()) {
+            $orang = "";
+            $user = DB::table('users')->where('name','LIKE','%'.request()->search.'%')->get();
+            if ($user) {
+                foreach ($users as $user => $orang) {
+                    $output.='<tr>'.
+                    '<td>'.$product->id.'</td>'.
+                    '<td>'.$product->title.'</td>'.
+                    '<td>'.$product->description.'</td>'.
+                    '<td>'.$product->price.'</td>'.
+                    '</tr>';
+                }
+                return Response($output);
+            }
+        }
     }
 }
