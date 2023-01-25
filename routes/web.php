@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -13,8 +15,11 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware('auth')->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('index');
+    Route::post('guestbook', [HomeController::class, 'storeGuestBook'])->name('guestbook');
+    Route::get('/katalog', [HomeController::class, 'showKatalog'])->name('katalog');
+    Route::get('/buku-pinjaman', [HomeController::class, 'showBukuPinjaman'])->name('buku-pinjaman');
 });
 
 Route::get('/login', [App\Http\Controllers\UserController::class, 'showLogin']);
@@ -23,23 +28,8 @@ Route::get('/profil', [App\Http\Controllers\UserController::class, 'showProfil']
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/katalog', function () {
-    return view('katalog_buku');
-});
-
-Route::get('/katalog', function () {
-    return view('katalog_buku');
-});
 
 Route::post('/profil', [App\Http\Controllers\UserController::class, 'update'])->name('profil.update');
-
-Route::get('/buku_pinjaman', function () {
-    return view('buku_dipinjam');
-});
-
-Route::get('/profil', function () {
-    return view('profil');
-});
 
 Route::get('/edit_profil', [App\Http\Controllers\UserController::class, 'editProfil']);
 
@@ -64,7 +54,3 @@ Route::get('/admin_log_aktivitas', function () {
 Route::get('/form_buku_tamu', function () {
     return view('form_buku_tamu');
 });
-
-// Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

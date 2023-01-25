@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+.navbar .navbar-brand {
+    font-weight: 600;
+}
+
+.navbar-nav .nav-item a {
+    font-weight: 600;
+    color: #111827;
+    font-size: 14px;
+}
+
+.navbar-nav .active {
+    border-bottom: 3px solid #0c61f7e5;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.user-menu img {
+    height: 39px;
+    width: 39px;
+}
+
+.user-menu .user-name h6 {
+    font-weight: 600;
+    font-size: 14px;
+    color: #111827;
+}
+
+.user-menu .user-name p a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 12px;
+    color: #0c61f7;
+}
+
+.user-menu .user-name p a:hover {
+    color: #042f7d;
+}
+
+.shadow-top {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075),
+        0px -1px 5px rgba(0, 0, 0, 0.075);
+}
+
+.footer .footer-title {
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 11px;
+}
+
+.footer .footer-subtitle {
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 11px;
+}
+
+.footer .footer-description {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.footer .footer-copy {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.footer-address,
+.footer-phone,
+.footer-email {
+    font-weight: 300;
+    font-size: 12px;
+    color: #0f172a;
+}
+
+.buku-tamu-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+}
+
+.icon-title {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+}
+
+.subtitle {
+    grid-column: 2 / 3;
+}
+
+.buku-tamu-grid .title {
+    font-weight: 600;
+    font-size: 32px;
+}
+
+.buku-tamu-grid .subtitle {
+    font-weight: 500;
+    font-size: 16px;
+    color: #9f9f9f;
+}
+
+.buku-tamu-grid .form {
+    grid-column: 2 / 2;
+}
+
+.buku-tamu-grid .form .form-label {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.buku-tamu-grid .form .form-control {
+    background-color: rgba(58, 58, 58, 0.09);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #111827;
+    padding: 15px;
+}
+
+.buku-tamu-grid .form button {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+input[type="date"] {
+    position: relative;
+}
+
+/* make the native arrow invisible and stretch it over the whole field so you can click anywhere in the input field to trigger the native datepicker*/
+input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    color: transparent;
+    background: transparent;
+}
+
+/* adjust increase/decrease button */
+input[type="date"]::-webkit-inner-spin-button {
+    z-index: 1;
+}
+
+/* adjust clear button */
+input[type="date"]::-webkit-clear-button {
+    z-index: 1;
+}
+
+.notify {
+    z-index: 9999 !important;
+}
+
+.section-koleksi-buku h1.title {
+    font-weight: 800;
+    font-size: 32px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    color: #0f172a;
+    margin-bottom: 23px;
+}
+
+.section-koleksi-buku h1.subtitle {
+    font-weight: 600;
+    font-size: 24px;
+    color: #0f172a;
+}
+
+.section-koleksi-buku form .input-group {
+    background-color: #ebe8e8;
+    border-radius: 5px;
+}
+
+.section-koleksi-buku form .input-group .input-group-text {
+    background-color: #ebe8e8;
+    border: none;
+    color: #a5a5a5;
+}
+
+.section-koleksi-buku form .input-group input {
+    background-color: #ebe8e8;
+    border: none;
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #a5a5a5;
+}
+
+.section-koleksi-buku .text-book-category {
+    font-weight: 700;
+    font-size: 32px;
+    color: #0f172a;
+}
+
+.mt-80px {
+    margin-top: 80px;
+}
+
+.mt-35px {
+    margin-top: 35px !important;
+}
+
+.card-book {
+    border-radius: 20px;
+}
+
+.card-book img {
+    border-radius: 20px;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2/3;
+}
+
+.card-book .card-body {
+    padding: unset;
+    margin-top: 10px;
+}
+
+.card-book .card-body .card-title {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #19191b;
+    margin-bottom: unset;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.card-book .card-body .card-text {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: #9d9d9d;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.card-book .card-footer {
+    border: none;
+    padding: unset;
+    background-color: unset;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-book .card-footer .btn {
+    border-radius: 18px;
+}
+
+.text-borrow {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+}

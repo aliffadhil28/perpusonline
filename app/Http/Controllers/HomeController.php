@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
+use App\Models\Collection;
+use App\Models\GuestBook;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +26,48 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('user.index');
+    }
+
+    public function showKatalog(Request $request)
+    {
+        if ($request->has('q') && $request->q != '') {
+            $data = [
+                'books' => Book::where('title', 'like', '%' . $request->q . '%')->get(),
+            ];
+        } else {
+            $data = [
+                'randomBooks' => Book::inRandomOrder()->take(15)->get(),
+                'categories' => Book::select('category')->distinct()->get(),
+                'books' => Book::all(),
+            ];
+        }
+
+        return view('katalog_buku', $data);
+    }
+
+    public function storeGuestBook(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'date' => 'required|date',
+            'class' => 'required',
+        ]);
+
+        $guestBook = new GuestBook();
+        $guestBook->name = $request->name;
+        $guestBook->date = $request->date;
+        $guestBook->class = $request->class;
+        $guestBook->save();
+
+        notify()->success('Guest Book Berhasil Ditambahkan');
+        return redirect()->back();
+    }
+
+    public function showBukuPinjaman()
+    {
+        $collections = Collection::where('user_id', auth()->user()->id)->orderBy('borrowed_at', 'desc')->get();
+
+        return view('buku_dipinjam', compact('collections'));
     }
 }
