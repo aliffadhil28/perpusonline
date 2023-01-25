@@ -34,10 +34,6 @@ Route::get('/buku_pinjaman', function () {
     return view('buku_dipinjam');
 });
 
-Route::get('/profil', function () {
-    return view('profil');
-});
-
 Route::get('/edit_profil', [App\Http\Controllers\UserController::class, 'editProfil']);
 
 Route::get('/admin', function () {
