@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -13,8 +15,8 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware('auth')->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('index');
 });
 
 Route::get('/login', [App\Http\Controllers\UserController::class, 'showLogin']);
@@ -23,13 +25,6 @@ Route::get('/profil', [App\Http\Controllers\UserController::class, 'showProfil']
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/katalog', function () {
-    return view('katalog_buku');
-});
-
-Route::get('/katalog', function () {
-    return view('katalog_buku');
-});
 
 Route::post('/profil', [App\Http\Controllers\UserController::class, 'updateProfil'])->name('profil');
 
@@ -62,7 +57,3 @@ Route::get('/admin_buku_tamu', function () {
 Route::get('/admin_log_aktivitas', function () {
     return view('admin_log_aktivitas');
 });
-
-// Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
