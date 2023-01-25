@@ -9,7 +9,7 @@
 
         <div class="row mt-5">
             @foreach ($collections as $collection)
-                <div class="col-4 card card-book border-0 mb-3">
+                <div class="col-12 col-md-4 card card-book border-0 mb-3">
                     <img src="{{ asset($collection->book->cover) }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{ $collection->book->title }}</h5>
