@@ -214,8 +214,9 @@ input[type="date"]::-webkit-clear-button {
 .card-book img {
     border-radius: 20px;
     object-fit: cover;
-    width: 198px;
-    height: 306px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2/3;
 }
 
 .card-book .card-body {

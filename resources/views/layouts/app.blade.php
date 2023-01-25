@@ -55,7 +55,7 @@
                                 <div class="user-name text-end ms-3">
                                     <h6 class="mb-0 text-gray-600">{{ auth()->user()->name }}</h6>
                                     <p class="mb-0 text-sm text-gray-600">
-                                        <a href="{{ route('profil') }}">Profil</a>
+                                        <a class="me-2" href="{{ route('profil') }}">Profil</a>
                                         <a href="#"
                                             onclick="document.getElementById('form-logout').submit();">Logout</a>
                                     </p>

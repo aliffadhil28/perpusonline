@@ -106,7 +106,7 @@
                 pagination: false,
                 gap: '1rem',
                 interval: 3000,
-                perPage: 6,
+                perPage: 4,
                 perMove: 1,
                 autoplay: true,
                 breakpoints: {
