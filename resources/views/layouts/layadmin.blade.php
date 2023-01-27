@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin Perpus SMK 5 Kepanjen</title>
+    <title>@yield('title') | {{ config('app.name', 'Anggota') }}</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -19,7 +19,7 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
+    
 </head>
 
 <body id="page-top">
@@ -59,15 +59,15 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Daftar Tabel</h6>
                         <a class="collapse-item" href="admin_katalog">Katalog Buku</a>
-                        <a class="collapse-item" href="admin_anggota">Daftar Anggota</a>
+                        <a class="collapse-item nav-item @if (Request::is('admin_anggota*')) active @endif" href="{{ route('admin_anggota') }}">Daftar Anggota</a>
                         <a class="collapse-item" href="admin_buku_tamu">Buku Tamu</a>
                         <a class="collapse-item" href="admin_log_aktivitas">Log Aktivitas</a>
                     </div>
                 </div>
             </li>
 
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <!-- <li class="nav-item">
+            <!-- Nav Item - Utilities Collapse Menu --> 
+           <!-- <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
@@ -313,7 +313,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+                    @yield('content')
 
                 </div>
                 <!-- /.container-fluid -->

@@ -44,9 +44,6 @@
            <!-- GAMBAR -->
         <div class="login-right w-50 h-100">
             <div class="container">
-                <div class="ellipse"></div>
-                <img src="{{asset('img/Nomads-Sitting 1.png')}}" class="gambar">
-            </div>
         </div>
 
 
