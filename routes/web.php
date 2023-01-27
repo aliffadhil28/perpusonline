@@ -47,9 +47,7 @@ Route::get('/admin_buku_tamu', function () {
     return view('admin_buku_tamu');
 });
 
-Route::get('/admin_log_aktivitas', function () {
-    return view('admin_log_aktivitas');
-});
+Route::get('/admin_log_aktivitas', [App\Http\Controllers\HomeController::class, 'showActivity'])->name('admin.log');
 
 Route::get('/form_buku_tamu', function () {
     return view('form_buku_tamu');

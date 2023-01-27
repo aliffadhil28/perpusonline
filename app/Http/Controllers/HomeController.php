@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Models\Collection;
 use App\Models\GuestBook;
+use Spatie\Activitylog\Models\Activity;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -60,6 +61,10 @@ class HomeController extends Controller
         $guestBook->class = $request->class;
         $guestBook->save();
 
+        // activity()->log('User Mengisi Buku Tamu',[
+        //     'subject_type' => 'App\Models\GuestBook',
+        //     'event' => 'created',
+        // ]);
         notify()->success('Guest Book Berhasil Ditambahkan');
         return redirect()->back();
     }
@@ -69,5 +74,11 @@ class HomeController extends Controller
         $collections = Collection::where('user_id', auth()->user()->id)->orderBy('borrowed_at', 'desc')->get();
 
         return view('buku_dipinjam', compact('collections'));
+    }
+
+    public function showAcivity(Request $request)
+    {
+        $logs = Activity::all();
+        return view('admin_log_aktivitas',compact('logs'));
     }
 }

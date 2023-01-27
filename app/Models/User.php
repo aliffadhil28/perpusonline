@@ -6,10 +6,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Activitylog\Traits\LogsActivity;
+use Spatie\Activitylog\LogOptions;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
+    use LogsActivity;
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -46,4 +49,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults();
+    }
+
+    protected static $logName = 'User';
+    protected static $logUnguarded = true;
+    public function getDescriptionForEvent(string $eventName): string
+    {
+        return $this->name . " {$eventName} Oleh: " . auth()->user()->name;
+    }
 }
