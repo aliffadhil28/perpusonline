@@ -263,3 +263,13 @@ input[type="date"]::-webkit-clear-button {
     font-weight: 700;
     font-size: 16px;
 }
+
+.navbar-brand-logo {
+    width: 50px;
+    height: 70px
+  }
+
+  .logo {
+    width: 50px;
+    height: 70px;
+  }

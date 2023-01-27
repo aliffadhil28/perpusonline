@@ -2433,6 +2433,7 @@ fieldset:disabled a.btn {
   color: #fff;
   background-color: #1cc88a;
   border-color: #1cc88a;
+  text-decoration: none;
 }
 
 .btn-success:hover {

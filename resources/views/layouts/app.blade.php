@@ -21,7 +21,7 @@
     <header class="sticky-top bg-white">
         <nav class="navbar navbar-light navbar-expand-md bg-faded justify-content-center border-bottom shadow-sm">
             <div class="container p-2">
-                <a href="{{ route('index') }}" class="navbar-brand d-flex w-50 me-auto">{{ config('app.name') }}</a>
+                <a href="{{ route('index') }}" class="navbar-brand d-flex w-50 me-auto"><img src="{{ asset('img/logo.png') }}" class="navbar-brand-logo" alt=""></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapsingNavbar3">
                     <span class="navbar-toggler-icon"></span>
