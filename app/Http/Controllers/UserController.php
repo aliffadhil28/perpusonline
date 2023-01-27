@@ -25,7 +25,7 @@ class UserController extends Controller
 
     public function showProfil()
     {
-        $user = Auth::user();
+        $user = Auth()->user();
         $foto_profil = optional($user)->foto_profil ?? 'public/img/default_profil/profil.png';
         return view('profil',compact('user','foto_profil'));
     }

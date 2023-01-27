@@ -15,7 +15,7 @@
                         @endif
                         {{-- <img src="{{asset(auth()->user()->foto_profil)}}" width="100" alt="gambar profil" style="border-radius: 20px"> --}}
                     </div>
-                    <div class="col-2" style="margin: 3%;margin-top:5%">
+                    <div class="col-5" style="margin: 3%;margin-top:12.5%">
                         <p style="font-family: 'Montserrat';color: #FFFFFF;font-size:150%">
                             <b>Nama</b>
                         </p>

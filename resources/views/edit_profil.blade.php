@@ -15,15 +15,15 @@
                         @endif
                         {{-- <img src="{{asset(auth()->user()->foto_profil)}}" width="100" alt="gambar profil" style="border-radius: 20px"> --}}
                     </div>
-                    <div class="col-2" style="margin: 3%;margin-top:5%">
+                    <div class="col-5" style="margin: 3%;margin-top:12.5%">
                         <p style="font-family: 'Montserrat';color: #FFFFFF;font-size:150%">
                             <b>Nama</b>
                         </p>
                         <p style="font-family: 'Montserrat';color: #FFFFFF;margin-top:-20%;font-size:125%">
-                            Jurusan
+                            NIK
                         </p>
                         <p style="font-family: 'Montserrat';color: #FFFFFF;margin-top:-20%;font-size:125%">
-                            Instansi
+                            No.Hp
                         </p>
                     </div>
                 </div>
@@ -39,11 +39,6 @@
                             style="margin-left:3%; margin-top:5%;text-align: left;font-family: 'Montserrat'; font-weight: 700; font-size: 28px;line-height: 29px;letter-spacing: 0.17em; color: rgba(0, 0, 0, 0.58);">
                             ABOUT ME
                         </h1>
-                    </div>
-                    <div class="col-2" style="margin-top:2%;">
-                        <a href="edit_profil">
-                            <img src="img/edit.png" alt="edit" style="width: 50%;height: 100%;">
-                        </a>
                     </div>
                 </div>
                 <div class="row" style="font-family: 'Montserrat'; font-size: 140%; line-height: 24px;">
