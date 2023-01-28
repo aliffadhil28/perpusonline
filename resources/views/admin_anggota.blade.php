@@ -52,7 +52,7 @@
                                                         </button>
                                                         <ul class="dropdown-menu"
                                                             aria-labelledby="dropdownMenuButton1">
-                                                            <li><a class="dropdown-item" href="#">Detail
+                                                            <li><a class="dropdown-item" href="#">Hubungi WA
                                                                     user</a></li>
                                                             <li><a class="dropdown-item" href="#">Edit User</a>
                                                             </li>

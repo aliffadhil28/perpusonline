@@ -28,6 +28,7 @@
                         <th>Edisi</th>
                         <th>Jumlah</th>
                         <th>Kategori</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -39,6 +40,7 @@
                         <th>Edisi</th>
                         <th>Jumlah</th>
                         <th>Kategori</th>
+                        <th>Action</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -50,25 +52,24 @@
                         <td>2011/04/25</td>
                         <td>$320,800</td>
                         <td>Terpopuler</td>
+                        <td>
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-primary dropdown-toggle" type="button"
+                                                            id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                            aria-expanded="false">
+                                                            Action
+                                                        </button>
+                                                        <ul class="dropdown-menu"
+                                                            aria-labelledby="dropdownMenuButton1">
+                                                            <li><a class="dropdown-item" href="#">Edit Katalog</a>
+                                                            </li>
+                                                            <li><a class="dropdown-item" href="#">Delete
+                                                                    Katalog</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </td>            
                     </tr>
-                    <tr>
-                        <td>Garrett Winters</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>63</td>
-                        <td>2011/07/25</td>
-                        <td>$170,750</td>
-                        <td>Terpopuler</td>
-                    </tr>
-                    <tr>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009/01/12</td>
-                        <td>$86,000</td>
-                        <td>Ilmiah</td>
-                    </tr>
+                
                 </tbody>
             </table>
             <a href="#" class="btn btn-success" data-bs-toggle="modal"
