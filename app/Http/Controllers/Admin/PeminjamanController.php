@@ -60,6 +60,13 @@ class PeminjamanController extends Controller
     public function destroy($id)
     {
         $peminjaman = Collection::find($id);
+
+        if (!$peminjaman->is_returned) {
+            $book = Book::find($peminjaman->book_id);
+            $book->quantity = $book->quantity + 1;
+            $book->save();
+        }
+
         $peminjaman->delete();
 
         notify()->success('Berhasil menghapus data peminjaman');

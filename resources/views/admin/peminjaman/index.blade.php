@@ -52,10 +52,6 @@
                                                 </li>
                                             @endif
                                             <li>
-                                                <a class="dropdown-item" href="{{ route('peminjaman.edit', $item->id) }}">
-                                                    Edit</a>
-                                            </li>
-                                            <li>
                                                 <form action="{{ route('peminjaman.destroy', $item->id) }}" method="post">
                                                     @csrf
                                                     @method('delete')
