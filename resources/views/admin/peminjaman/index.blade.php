@@ -32,20 +32,36 @@
                                 <td>{{ $item->book->title }}</td>
                                 <td>{{ $item->borrowed_at }}</td>
                                 <td>{{ $item->returned_at }}</td>
-                                <td>{!! $item->formatted_status !!}</td>
+                                <td>{!! $item->formatted_admin_status !!}</td>
                                 <td>
                                     <div class="dropdown">
                                         <button class="btn btn-primary dropdown-toggle" type="button"
-                                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            data-toggle="dropdown" aria-expanded="false">
                                             Action
                                         </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                            <li><a class="dropdown-item" href="#">Hubungi WA
-                                                    user</a></li>
-                                            <li><a class="dropdown-item" href="#">Edit User</a>
+                                        <ul class="dropdown-menu">
+                                            @if (!$item->is_returned)
+                                                <li>
+                                                    <form action="{{ route('peminjaman.return', $item->id) }}"
+                                                        method="post">
+                                                        @csrf
+                                                        @method('patch')
+                                                        <button type="submit" class="dropdown-item">Sudah
+                                                            Dikembalikan</button>
+                                                    </form>
+                                                </li>
+                                            @endif
+                                            <li>
+                                                <a class="dropdown-item" href="{{ route('peminjaman.edit', $item->id) }}">
+                                                    Edit</a>
                                             </li>
-                                            <li><a class="dropdown-item" href="#">Delete
-                                                    User</a></li>
+                                            <li>
+                                                <form action="{{ route('peminjaman.destroy', $item->id) }}" method="post">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button type="submit" class="dropdown-item">Hapus</button>
+                                                </form>
+                                            </li>
                                         </ul>
                                     </div>
                                 </td>

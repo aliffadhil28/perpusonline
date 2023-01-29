@@ -42,6 +42,24 @@ class Collection extends Model
         return null;
     }
 
+    public function getFormattedAdminStatusAttribute()
+    {
+        if ($this->is_returned) {
+            return "<p class='text-borrow text-success'><i class='fas fa-check-circle'></i> Buku Sudah Dikembalikan</p>";
+        }
+
+        // today
+        if ($this->returned_at > now()) {
+            return "<p class='text-borrow text-primary'><i class='fas fa-clock'></i> Buku ini belum dikembalikan</p>";
+        }
+
+        if ($this->returned_at < now()) {
+            return "<p class='text-borrow text-danger'><i class='fas fa-exclamation'></i> Buku ini harus dikembalikan ";
+        }
+
+        return null;
+    }
+
     protected static $logName = 'Koleksi';
     // protected static $logUnguarded = true;
     public function getDescriptionForEvent(string $eventName): string

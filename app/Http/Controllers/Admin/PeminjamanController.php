@@ -43,4 +43,26 @@ class PeminjamanController extends Controller
         notify()->success('Berhasil menambahkan data peminjaman');
         return redirect()->route('peminjaman.index');
     }
+
+    public function return(Collection $peminjaman)
+    {
+        $peminjaman->is_returned = true;
+        $peminjaman->save();
+
+        $book = Book::find($peminjaman->book_id);
+        $book->quantity = $book->quantity + 1;
+        $book->save();
+
+        notify()->success('Berhasil mengembalikan buku');
+        return redirect()->route('peminjaman.index');
+    }
+
+    public function destroy($id)
+    {
+        $peminjaman = Collection::find($id);
+        $peminjaman->delete();
+
+        notify()->success('Berhasil menghapus data peminjaman');
+        return redirect()->route('peminjaman.index');
+    }
 }
