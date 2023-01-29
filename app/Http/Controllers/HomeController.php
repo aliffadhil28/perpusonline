@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Models\Collection;
 use App\Models\GuestBook;
+use App\Models\User;
 use Spatie\Activitylog\Models\Activity;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -76,9 +78,27 @@ class HomeController extends Controller
         return view('buku_dipinjam', compact('collections'));
     }
 
-    public function showAcivity(Request $request)
+    public function showUsers()
     {
-        $logs = Activity::all();
+        $users = User::all();
+        return view('admin_anggota', compact('users'));
+
+    }
+
+    public function showActivity(Request $request)
+    {
+        $logs = DB::table('activity_log')
+                ->join('users', 'activity_log.causer_id', '=', 'users.id')
+                ->select('activity_log.*', 'users.name as causer_name')
+                ->get();
+        // $logs = Activity::with('causer')->get();
+        // $user = User::where('id',$request->id)->get();
         return view('admin_log_aktivitas',compact('logs'));
+    }
+
+    public function showGuestBook(Request $request)
+    {
+        $bt = GuestBook::all();
+        return view('admin_buku_tamu',compact('bt'));
     }
 }
