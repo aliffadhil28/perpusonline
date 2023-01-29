@@ -57,13 +57,6 @@ class UserController extends Controller
         return view('profil')->with('message','Your Profil had been updated');
     }
 
-    public function showUsers()
-    {
-        $users = User::all();
-        return view('admin_anggota', compact('users'));
-
-    }
-
     public function search(Request $request)
     {
         if ($request->ajax()) {
@@ -81,5 +74,12 @@ class UserController extends Controller
                 return Response($output);
             }
         }
+    }
+
+    public function destroyUser($id)
+    {
+        $data = User::find($id);
+        $data->delete();
+        return redirect()->route('destroy.users')->with('success','Data deleted successfully!');
     }
 }

@@ -41,6 +41,6 @@ class Collection extends Model
 
     public function getActivitylogOptions(): LogOptions
     {
-        return LogOptions::defaults();
+        return LogOptions::defaults()->useLogName('Peminjaman');
     }
 }

@@ -15,6 +15,7 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
+                                            <th>Id Anggoota</th>
                                             <th>Nama</th>
                                             <th>Email</th>
                                             <th>Alamat</th>
@@ -38,6 +39,7 @@
                                     <tbody>
                                         @foreach ($users as $anggota)
                                             <tr>
+                                                <td>{{ $anggota->id }}</td>
                                                 <td>{{ $anggota->name }}</td>
                                                 <td>{{ $anggota->email }}</td>
                                                 <td>{{ $anggota->alamat }}</td>
@@ -52,12 +54,9 @@
                                                         </button>
                                                         <ul class="dropdown-menu"
                                                             aria-labelledby="dropdownMenuButton1">
-                                                            <li><a class="dropdown-item" href="#">Hubungi WA
-                                                                    user</a></li>
-                                                            <li><a class="dropdown-item" href="#">Edit User</a>
-                                                            </li>
-                                                            <li><a class="dropdown-item" href="#">Delete
-                                                                    User</a></li>
+                                                            <li><a class="dropdown-item" href="#">Hubungi WA user</a></li>
+                                                            <li><a class="dropdown-item" href="#">Edit User</a></li>
+                                                            <li><a class="dropdown-item" href="#">Delete User</a></li>
                                                         </ul>
                                                     </div>
                                                 </td>
@@ -85,7 +84,7 @@
                                     <h1>Tambah Anggota</h1>
                                 </div>
                                 <div class="subtitle">
-                        
+
                                 </div>
                                 <div class="form mt-4">
                                     <form method="POST" action="{{ route('guestbook') }}">
@@ -125,7 +124,7 @@
                                             <input type="text" class="form-control" name="Password"
                                                 placeholder="Password" required>
                                         </div>
-                                
+
                                         <div class="d-grid">
                                             <button type="submit" class="btn btn-primary d-block">Submit</button>
                                         </div>
