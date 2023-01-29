@@ -33,21 +33,13 @@
                     </tr>
                 </tfoot>
                 <tbody>
-                    <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                    </tr>
-                    <tr>
-                        <td>Garrett Winters</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                    </tr>
-                    <tr>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                    </tr>
+                    @foreach ($gb as $bt)
+                        <tr>
+                            <td>{{$bt->name}}</td>
+                            <td>{{$bt->date}}</td>
+                            <td>{{$bt->class}}</td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

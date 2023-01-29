@@ -52,7 +52,7 @@ class User extends Authenticatable
 
     public function getActivitylogOptions(): LogOptions
     {
-        return LogOptions::defaults();
+        return LogOptions::defaults()->useLogName('User');
     }
 
     protected static $logName = 'User';

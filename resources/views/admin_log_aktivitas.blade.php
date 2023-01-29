@@ -36,24 +36,14 @@
                     </tr>
                 </tfoot>
                 <tbody>
-                    <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                    </tr>
-                    <tr>
-                        <td>Garrett Winters</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>63</td>
-                    </tr>
-                    <tr>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                    </tr>
+                    @foreach ($logs as $log)
+                        <tr>
+                            <td>{{$log->log_name}}</td>
+                            <td>{{$log->created_at}}</td>
+                            <td>{{$log->causer_name}}</td>
+                            <td>{{$log->description}}</td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

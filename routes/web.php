@@ -48,10 +48,8 @@ Route::get('/admin_katalog', function () {
 });
 
 Route::get('/admin_anggota', [App\Http\Controllers\UserController::class,'showUsers'])->name('admin_anggota');
+Route::get('/admin_buku_tamu', [App\Http\Controllers\HomeController::class,'showGuestBook'])->name('admin_buku_tamu');
 
-Route::get('/admin_buku_tamu', function () {
-    return view('admin_buku_tamu');
-});
 
 Route::get('/admin_log_aktivitas', [App\Http\Controllers\HomeController::class, 'showActivity'])->name('admin.log');
 

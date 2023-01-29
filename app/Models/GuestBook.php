@@ -29,6 +29,6 @@ class GuestBook extends Model
 
     public function getActivityLogOptions(): LogOptions
     {
-        return LogOptions::defaults();
+        return LogOptions::defaults()->useLogName('Isi Buku Tamu');
     }
 }

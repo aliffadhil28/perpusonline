@@ -7,6 +7,8 @@ use App\Models\Collection;
 use App\Models\GuestBook;
 use Spatie\Activitylog\Models\Activity;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class HomeController extends Controller
 {
@@ -76,9 +78,17 @@ class HomeController extends Controller
         return view('buku_dipinjam', compact('collections'));
     }
 
-    public function showAcivity(Request $request)
+    public function showActivity(Request $request)
     {
-        $logs = Activity::all();
+        $logs = DB::table('activity_log')
+            ->join('users', 'activity_log.causer_id', '=', 'users.id')
+            ->select('activity_log.*', 'users.name as causer_name')
+            ->get();
         return view('admin_log_aktivitas',compact('logs'));
+    }
+    public function showGuestBook(Request $request)
+    {
+        $gb = GuestBook::all();
+        return view('admin_buku_tamu',compact('gb'));
     }
 }
