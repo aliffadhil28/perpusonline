@@ -4,7 +4,6 @@
 @section('title', 'buku_anggota')
 
 @section('content')
-<<<<<<< HEAD
 <h1 class="h3 mb-2 text-gray-800">Daftar User</h1>
 <p class="mb-4">Ini adalah daftar user yang ada di perpus SMK 5 Kepanjen .</p>
 <div class="card shadow mb-4">
@@ -16,7 +15,6 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Id Anggoota</th>
                                             <th>Nama</th>
                                             <th>Email</th>
                                             <th>Alamat</th>
@@ -27,29 +25,6 @@
                                         </tr>
                                     </thead>
                                     {{-- <tfoot>
-=======
-    <h1 class="h3 mb-2 text-gray-800">Daftar User</h1>
-    <p class="mb-4">Ini adalah daftar user yang ada di perpus SMK 5 Kepanjen .</p>
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Daftar Anggota</h6>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>Nama</th>
-                            <th>Email</th>
-                            <th>Alamat</th>
-                            <th>NIK</th>
-                            {{-- <th>Foto_Profil</th> --}}
-                            <th>No.Hp</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    {{-- <tfoot>
->>>>>>> e32e37a100d85a8aa8eef84998405ea25f577b77
                                             <tr>
                                                 <th>Nama</th>
                                                 <th>Email</th>
@@ -60,11 +35,9 @@
                                                 <th>Alamat</th>
                                             </tr>
                                         </tfoot> --}}
-<<<<<<< HEAD
                                     <tbody>
                                         @foreach ($users as $anggota)
                                             <tr>
-                                                <td>{{ $anggota->id }}</td>
                                                 <td>{{ $anggota->name }}</td>
                                                 <td>{{ $anggota->email }}</td>
                                                 <td>{{ $anggota->alamat }}</td>
@@ -79,9 +52,12 @@
                                                         </button>
                                                         <ul class="dropdown-menu"
                                                             aria-labelledby="dropdownMenuButton1">
-                                                            <li><a class="dropdown-item" href="#">Hubungi WA user</a></li>
-                                                            <li><a class="dropdown-item" href="#">Edit User</a></li>
-                                                            <li><a class="dropdown-item" href="#">Delete User</a></li>
+                                                            <li><a class="dropdown-item" href="#">Hubungi WA
+                                                                    user</a></li>
+                                                            <li><a class="dropdown-item" href="#">Edit User</a>
+                                                            </li>
+                                                            <li><a class="dropdown-item" href="#">Delete
+                                                                    User</a></li>
                                                         </ul>
                                                     </div>
                                                 </td>
@@ -94,41 +70,6 @@
                             </div>
                         </div>
                     </div>
-=======
-                    <tbody>
-                        @foreach ($users as $anggota)
-                            <tr>
-                                <td>{{ $anggota->name }}</td>
-                                <td>{{ $anggota->email }}</td>
-                                <td>{{ $anggota->alamat }}</td>
-                                <td>{{ $anggota->nik }}</td>
-                                <td>{{ $anggota->no_hp }}</td>
-                                <td>
-                                    <div class="dropdown">
-                                        <button class="btn btn-primary dropdown-toggle" type="button"
-                                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Action
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                            <li><a class="dropdown-item" href="#">Hubungi WA
-                                                    user</a></li>
-                                            <li><a class="dropdown-item" href="#">Edit User</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="#">Delete
-                                                    User</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-                <a href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#bukuTamuModal">Tambah
-                    anggota</a>
-            </div>
-        </div>
-    </div>
->>>>>>> e32e37a100d85a8aa8eef84998405ea25f577b77
 
     </div>
     </div>
@@ -197,7 +138,6 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
     <x:notify-messages />
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
@@ -205,6 +145,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous">
     </script>
-=======
->>>>>>> e32e37a100d85a8aa8eef84998405ea25f577b77
 @endsection

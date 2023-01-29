@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-2" style="margin: 3%;margin-top:5%">
                         @if (auth()->user()->foto_profil != null)
-                            <img src="{{ auth()->user()->foto_profil}}" width="100" style="border-radius: 20px">
+                            <img src="{{ asset('default_profil/profil.png') }}" width="100" style="border-radius: 20px">
                         @else
                             <img src="{{ auth()->user()->foto_profil }}" alt="Profil" width="100"
                                 style="border-radius: 20px">

@@ -52,17 +52,13 @@ class User extends Authenticatable
 
     public function getActivitylogOptions(): LogOptions
     {
-        return LogOptions::defaults()->useLogName('User');
+        return LogOptions::defaults();
     }
 
     protected static $logName = 'User';
     protected static $logUnguarded = true;
     public function getDescriptionForEvent(string $eventName): string
     {
-        if($eventName == 'created') {
-            return "User baru dengan nama " . $this->name . " telah terdaftar";
-            } else {
-            return $this->name . " {$eventName} Oleh: " . auth()->user()->name;
-        }
+        return $this->name . " {$eventName} Oleh: " . auth()->user()->name;
     }
 }

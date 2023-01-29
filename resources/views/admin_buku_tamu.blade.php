@@ -25,14 +25,29 @@
                         <th>Kelas</th>
                     </tr>
                 </thead>
+                <tfoot>
+                    <tr>
+                        <th>Nama</th>
+                        <th>Tanggal_Akses</th>
+                        <th>Kelas</th>
+                    </tr>
+                </tfoot>
                 <tbody>
-                    @foreach ($bt as $gb)
-                        <tr>
-                            <td>{{$gb->name}}</td>
-                            <td>{{$gb->date}}</td>
-                            <td>{{$gb->class}}</td>
-                        </tr>
-                    @endforeach
+                    <tr>
+                        <td>Tiger Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                    </tr>
+                    <tr>
+                        <td>Garrett Winters</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                    </tr>
+                    <tr>
+                        <td>Ashton Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
