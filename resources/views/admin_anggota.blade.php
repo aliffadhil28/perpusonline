@@ -1,7 +1,7 @@
 @extends('layouts.layadmin')
 
 
-@section('title','buku_anggota')
+@section('title', 'buku_anggota')
 
 @section('content')
 <h1 class="h3 mb-2 text-gray-800">Daftar User</h1>
@@ -71,10 +71,10 @@
                         </div>
                     </div>
 
-                </div>
-                </div>
- <!-- modal buku tamu -->
-                <div class="modal fade" id="bukuTamuModal" tabindex="-1" aria-labelledby="bukuTamuModalLabel" aria-hidden="true">
+    </div>
+    </div>
+    <!-- modal buku tamu -->
+    <div class="modal fade" id="bukuTamuModal" tabindex="-1" aria-labelledby="bukuTamuModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
@@ -85,7 +85,7 @@
                                     <h1>Tambah Anggota</h1>
                                 </div>
                                 <div class="subtitle">
-                        
+
                                 </div>
                                 <div class="form mt-4">
                                     <form method="POST" action="{{ route('guestbook') }}">
@@ -102,13 +102,13 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for="class" class="form-label">Email *</label>
-                                            <input type="text" class="form-control" name="Email"
-                                                placeholder="Email" required>
+                                            <input type="text" class="form-control" name="Email" placeholder="Email"
+                                                required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="class" class="form-label">NIK *</label>
-                                            <input type="text" class="form-control" name="NIK"
-                                                placeholder="NIK" required>
+                                            <input type="text" class="form-control" name="NIK" placeholder="NIK"
+                                                required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="class" class="form-label">No Telpon*</label>
@@ -117,15 +117,15 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for="class" class="form-label">Alamat*</label>
-                                            <input type="text" class="form-control" name="Alamat"
-                                                placeholder="Alamat" required>
+                                            <input type="text" class="form-control" name="Alamat" placeholder="Alamat"
+                                                required>
                                         </div>
                                         <div class="mb-4">
                                             <label for="class" class="form-label">Password *</label>
                                             <input type="text" class="form-control" name="Password"
                                                 placeholder="Password" required>
                                         </div>
-                                
+
                                         <div class="d-grid">
                                             <button type="submit" class="btn btn-primary d-block">Submit</button>
                                         </div>

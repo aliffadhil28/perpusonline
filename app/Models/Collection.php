@@ -19,17 +19,45 @@ class Collection extends Model
         return $this->hasOne(Book::class, 'id', 'book_id');
     }
 
+    public function user()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
+
     public function getFormattedStatusAttribute()
     {
         if ($this->is_returned) {
             return "<p class='text-borrow text-success'><i class='fas fa-check-circle'></i> Buku Sudah Dikembalikan</p>";
         }
 
-        if ($this->returned_at > now()) {
+        // today
+        if ($this->returned_at == Carbon::now()->format('Y-m-d')) {
+            return "<p class='text-borrow text-danger'><i class='fas fa-exclamation'></i> Buku ini harus dikembalikan hari ini</p>";
+        }
+
+        if ($this->returned_at <> now()) {
             return "<p class='text-borrow text-danger'><i class='fas fa-clock'></i> Buku ini harus dikembalikan ".Carbon::parse($this->returned_at)->diffForHumans();
         }
 
-        return "<p class='text-borrow text-danger'><i class='fas fa-exclamation'></i> Buku ini harus dikembalikan ".Carbon::parse($this->borrowed_at)->diffForHumans();
+        return null;
+    }
+
+    public function getFormattedAdminStatusAttribute()
+    {
+        if ($this->is_returned) {
+            return "<p class='text-borrow text-success'><i class='fas fa-check-circle'></i> Buku Sudah Dikembalikan</p>";
+        }
+
+        // today
+        if ($this->returned_at > now()) {
+            return "<p class='text-borrow text-primary'><i class='fas fa-clock'></i> Buku ini belum dikembalikan</p>";
+        }
+
+        if ($this->returned_at < now()) {
+            return "<p class='text-borrow text-danger'><i class='fas fa-exclamation'></i> Buku ini harus dikembalikan ";
+        }
+
+        return null;
     }
 
     protected static $logName = 'Koleksi';
