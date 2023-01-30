@@ -49,8 +49,6 @@ Route::get('/admin_katalog', function () {
     return view('admin_katalog');
 });
 
-Route::get('/admin_anggota', [App\Http\Controllers\HomeController::class,'showUsers'])->name('admin_anggota');
-Route::get('/destroy_user', [App\Http\Controllers\UserController::class,'destroyUser'])->name('destroy.users');
 Route::get('/admin_buku_tamu', [App\Http\Controllers\HomeController::class,'showGuestBook'])->name('show.gb');
 
 Route::get('/admin_log_aktivitas', [App\Http\Controllers\HomeController::class, 'showActivity'])->name('admin.log');

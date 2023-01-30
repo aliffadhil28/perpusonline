@@ -78,13 +78,6 @@ class HomeController extends Controller
         return view('buku_dipinjam', compact('collections'));
     }
 
-    public function showUsers()
-    {
-        $users = User::all();
-        return view('admin_anggota', compact('users'));
-
-    }
-
     public function showActivity(Request $request)
     {
         $logs = DB::table('activity_log')
