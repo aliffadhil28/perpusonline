@@ -23,7 +23,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/katalog', [HomeController::class, 'showKatalog'])->name('katalog');
     Route::get('/buku-pinjaman', [HomeController::class, 'showBukuPinjaman'])->name('buku-pinjaman');
 
-    Route::prefix('admin')->group(function () {
+    Route::prefix('admin')->middleware('admin')->group(function () {
         Route::resource('peminjaman', PeminjamanController::class);
         Route::patch('peminjaman/{peminjaman}/return', [PeminjamanController::class, 'return'])->name('peminjaman.return');
         Route::resource('users', AdminUserController::class);
@@ -43,15 +43,15 @@ Route::get('/edit_profil', [App\Http\Controllers\UserController::class, 'editPro
 
 Route::get('/admin', function () {
     return view('admin');
-})->name('admin');
+})->middleware('admin')->name('admin');
 
 Route::get('/admin_katalog', function () {
     return view('admin_katalog');
-});
+})->middleware('admin');
 
-Route::get('/admin_buku_tamu', [App\Http\Controllers\HomeController::class,'showGuestBook'])->name('show.gb');
+Route::get('/admin_buku_tamu', [App\Http\Controllers\HomeController::class,'showGuestBook'])->middleware('admin')->name('show.gb');
 
-Route::get('/admin_log_aktivitas', [App\Http\Controllers\HomeController::class, 'showActivity'])->name('admin.log');
+Route::get('/admin_log_aktivitas', [App\Http\Controllers\HomeController::class, 'showActivity'])->middleware('admin')->name('admin.log');
 
 Route::get('/form_buku_tamu', function () {
     return view('form_buku_tamu');
