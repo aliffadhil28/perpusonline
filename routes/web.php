@@ -43,12 +43,10 @@ Route::get('/admin', function () {
     return view('admin');
 })->name('admin');
 
-Route::get('/admin_katalog', function () {
-    return view('admin_katalog');
-});
-
 Route::get('/admin_anggota', [App\Http\Controllers\UserController::class,'showUsers'])->name('admin_anggota');
-Route::get('/admin_buku_tamu', [App\Http\Controllers\HomeController::class,'showGuestBook'])->name('admin_buku_tamu');
+Route::get('/admin_buku_tamu', [HomeController::class,'showGuestBook'])->name('admin_buku_tamu');
+Route::get('/admin_katalog', [HomeController::class,'showBook'])->name('admin_katalog');
+Route::post('tambah_buku', [HomeController::class,'storeBook'])->name('tambah_buku');
 
 
 Route::get('/admin_log_aktivitas', [App\Http\Controllers\HomeController::class, 'showActivity'])->name('admin.log');

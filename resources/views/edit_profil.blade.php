@@ -49,7 +49,7 @@
                             <label for="nama" class="form-label">Nama Lengkap</label>
                             <input type="text" id="nama" aria-describedby="emailHelp"
                                 placeholder="Masukkan nama anda" class="form-control @error('name') is-invalid @enderror"
-                                name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                name="name" value="{{ auth()->user()->name  }}" required autocomplete="name" autofocus>
 
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
@@ -60,7 +60,7 @@
                         <div class="col-10" style="margin-left:3%">
                             <label for="email" class="form-label">Email</label>
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                name="email" value="{{ old('email') }}" required autocomplete="email"
+                                name="email" value="{{ auth()->user()->email }}" required autocomplete="email"
                                 placeholder="Masukkan email anda">
 
                             @error('email')
@@ -72,7 +72,7 @@
                         <div class="col-10" style="margin-left:3%">
                             <label for="nik" class="form-label">NIK</label>
                             <input id="nik" type="text" class="form-control @error('nik') is-invalid @enderror"
-                                name="nik" value="{{ old('nik') }}" required autocomplete="nik"
+                                name="nik" value="{{ auth()->user()->nik }}" required autocomplete="nik"
                                 placeholder="Masukkan NIK">
 
                             @error('nik')
@@ -84,7 +84,7 @@
                         <div class="col-10" style="margin-left:3%">
                             <label for="no_hp" class="form-label">Nomor Telepon</label>
                             <input id="no_hp" type="text" class="form-control @error('no_hp') is-invalid @enderror"
-                                name="no_hp" value="{{ old('no_hp') }}" required autocomplete="nik"
+                                name="no_hp" value="{{ auth()->user()->no_hp  }}" required autocomplete="nik"
                                 placeholder="Ex : +6281234567890">
 
                             @error('no_hp')
@@ -98,7 +98,7 @@
                             <input type="text" id="text" aria-describedby="emailHelp"
                                 placeholder="Masukkan alamat anda"
                                 class="form-control @error('alamat') is-invalid @enderror" name="alamat"
-                                aria-describedby="emailHelp" value="{{ old('alamat') }}" required autocomplete="alamat"
+                                aria-describedby="emailHelp" value="{{ auth()->user()->alamat }}" required autocomplete="alamat"
                                 autofocus>
 
                             @error('alamat')
@@ -112,7 +112,7 @@
                             <label for="foto_profil" class="form-label">Foto Profil</label>
                             <input type="file" name="foto_profil" class="form-control" id="foto_profil">
 
-                            @error('foto')
+                            @error('foto_profil')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

@@ -7,7 +7,9 @@ use App\Models\Collection;
 use App\Models\GuestBook;
 use Spatie\Activitylog\Models\Activity;
 use Illuminate\Http\Request;
+use App\Http\Requests\BookRequest;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 
 
 class HomeController extends Controller
@@ -63,11 +65,37 @@ class HomeController extends Controller
         $guestBook->class = $request->class;
         $guestBook->save();
 
-        // activity()->log('User Mengisi Buku Tamu',[
-        //     'subject_type' => 'App\Models\GuestBook',
-        //     'event' => 'created',
-        // ]);
         notify()->success('Guest Book Berhasil Ditambahkan');
+        return redirect()->back();
+    }
+
+    public function storeBook(Request $request)
+    {
+        $this->validate($request, [
+            'title'     => 'required|min:5',
+            'author'   => 'required',
+            'publisher'   => 'required',
+            'year'   => 'required',
+            'category'   => 'required',
+            'quantity'   => 'required',
+            'cover'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        //upload image
+        $image = $request->file('cover');
+        $image->storeAs('public/covers', $image->hashName());
+
+        //create book
+        Book::create([
+            'title'     => $request->title,
+            'publisher'   => $request->publisher,
+            'year'   => $request->year,
+            'quantity'   => $request->quantity,
+            'category'   => $request->category,
+            'cover'     => $image->hashName(),
+        ]);
+
+        notify()->success('Buku Berhasil Ditambahkan');
         return redirect()->back();
     }
 
@@ -90,5 +118,11 @@ class HomeController extends Controller
     {
         $gb = GuestBook::all();
         return view('admin_buku_tamu',compact('gb'));
+    }
+
+    public function showBook()
+    {
+        $book = Book::all();
+        return view('admin_katalog',compact('book'));
     }
 }

@@ -1,90 +1,79 @@
 @extends('layouts.layadmin')
 
 
-@section('title','buku_anggota')
+@section('title', 'buku_anggota')
 
 @section('content')
 
-<div class="container-fluid">
+    <div class="container-fluid">
 
-<!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Katalog Buku</h1>
-<p class="mb-4">Ini adalah katalog buku yang ada di perpus SMK 5 Kepanjen .</p>
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">Katalog Buku</h1>
+        <p class="mb-4">Ini adalah katalog buku yang ada di perpus SMK 5 Kepanjen .</p>
 
-<!-- DataTales Example -->
-<div class="card shadow mb-4">
-    <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Katalog Buku</h6>
-    </div>
-    <div class="card-body">
-        <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                    <tr>
-                        <th>Judul Buku</th>
-                        <th>Pengarang</th>
-                        <th>Penerbit</th>
-                        <th>Tahun</th>
-                        <th>Edisi</th>
-                        <th>Jumlah</th>
-                        <th>Kategori</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tfoot>
-                    <tr>
-                        <th>Judul Buku</th>
-                        <th>Pengarang</th>
-                        <th>Penerbit</th>
-                        <th>Tahun</th>
-                        <th>Edisi</th>
-                        <th>Jumlah</th>
-                        <th>Kategori</th>
-                        <th>Action</th>
-                    </tr>
-                </tfoot>
-                <tbody>
-                    <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td>$320,800</td>
-                        <td>Terpopuler</td>
-                        <td>
-                                                    <div class="dropdown">
-                                                        <button class="btn btn-primary dropdown-toggle" type="button"
-                                                            id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                                            aria-expanded="false">
-                                                            Action
-                                                        </button>
-                                                        <ul class="dropdown-menu"
-                                                            aria-labelledby="dropdownMenuButton1">
-                                                            <li><a class="dropdown-item" href="#">Edit Katalog</a>
-                                                            </li>
-                                                            <li><a class="dropdown-item" href="#">Delete
-                                                                    Katalog</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </td>            
-                    </tr>
-                
-                </tbody>
-            </table>
-            <a href="#" class="btn btn-success" data-bs-toggle="modal"
-                                data-bs-target="#bukuTamuModal">Tambah Katalog</a>
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Katalog Buku</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Judul Buku</th>
+                                <th>Pengarang</th>
+                                <th>Penerbit</th>
+                                <th>Tahun</th>
+                                <th>Edisi</th>
+                                <th>Jumlah</th>
+                                <th>Kategori</th>
+                                <th>Cover</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($book as $buku)
+                                <tr>
+                                    <td>{{ $buku->title }}</td>
+                                    <td>{{ $buku->author }}</td>
+                                    <td>{{ $buku->publisher }}</td>
+                                    <td>{{ $buku->year }}</td>
+                                    <td>{{ $buku->edition }}</td>
+                                    <td>{{ $buku->quantity }}</td>
+                                    <td>{{ $buku->category }}</td>
+                                    <td><img src="{{ asset($buku->cover) }}" alt="Cover"></td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-primary dropdown-toggle" type="button"
+                                                id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Action
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item" href="#">Edit Katalog</a>
+                                                </li>
+                                                <li><a class="dropdown-item" href="#">Delete
+                                                        Katalog</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    <a href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#bukuModal">Tambah
+                        Katalog</a>
+                </div>
+            </div>
         </div>
+
     </div>
-</div>
+    <!-- /.container-fluid -->
 
-</div>
-<!-- /.container-fluid -->
+    </div>
+    </div>
 
-</div>
-</div>
-
-<div class="modal fade" id="bukuTamuModal" tabindex="-1" aria-labelledby="bukuTamuModalLabel" aria-hidden="true">
+    <div class="modal fade" id="bukuModal" tabindex="-1" aria-labelledby="bukuModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
@@ -95,49 +84,49 @@
                                     <h1>Tambah Katalog Buku</h1>
                                 </div>
                                 <div class="subtitle">
-                        
+
                                 </div>
                                 <div class="form mt-4">
-                                    <form method="POST" action="{{ route('guestbook') }}">
+                                    <form method="POST" action="{{ route('tambah_buku') }}" enctype="multipart/form-data">
                                         @csrf
                                         <div class="mb-3">
-                                            <label for="name" class="form-label">Judul Buku *</label>
-                                            <input type="text" class="form-control" name="judul"
+                                            <label for="title" class="form-label">Judul Buku *</label>
+                                            <input type="text" class="form-control" name="title"
                                                 placeholder="Judul Buku" required>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="name" class="form-label">Author *</label>
-                                            <input type="text" class="form-control" name="Author"
-                                                placeholder="Author" required>
+                                            <label for="author" class="form-label">Author *</label>
+                                            <input type="text" class="form-control" name="author" placeholder="Author"
+                                                required>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="name" class="form-label">Publisher *</label>
-                                            <input type="text" class="form-control" name="Publisher"
+                                            <label for="publisher" class="form-label">Publisher *</label>
+                                            <input type="text" class="form-control" name="publisher"
                                                 placeholder="Publisher" required>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="name" class="form-label">Tahun *</label>
-                                            <input type="number" class="form-control" name="Tahun"
-                                                placeholder="Tahun" required>
+                                            <label for="year" class="form-label">Tahun *</label>
+                                            <input type="string" class="form-control" name="year" placeholder="Tahun"
+                                                required>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="name" class="form-label">Edisi *</label>
-                                            <input type="number" class="form-control" name="Edisi"
-                                                placeholder="Edisi" required>
+                                            <label for="edition" class="form-label">Edisi *</label>
+                                            <input type="text" class="form-control" name="edition" placeholder="Edisi"
+                                                required>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="name" class="form-label">Jumlah *</label>
-                                            <input type="number" class="form-control" name="Jumlah"
-                                                placeholder="Jumlah" required>
+                                            <label for="quantity" class="form-label">Jumlah *</label>
+                                            <input type="number" class="form-control" name="quantity" placeholder="Jumlah"
+                                                required>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="name" class="form-label">Kategori *</label>
-                                            <input type="text" class="form-control" name="Kategori"
+                                            <label for="category" class="form-label">Kategori *</label>
+                                            <input type="text" class="form-control" name="category"
                                                 placeholder="Kategori" required>
                                         </div>
                                         <div class="mb-4">
-                                            <label for="name" class="form-label">Cover *</label>
-                                            <input type="file" class="form-control" name="Cover"
+                                            <label for="cover" class="form-label">Cover *</label>
+                                            <input type="file" class="form-control" name="cover"
                                                 placeholder="Cover">
                                         </div>
                                         <div class="d-grid">

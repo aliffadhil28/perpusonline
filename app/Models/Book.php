@@ -12,11 +12,15 @@ class Book extends Model
     use LogsActivity;
     use HasFactory;
 
+    protected $fillable = [
+        'cover',
+    ];
+
     protected static $logName = 'buku';
     // protected static $logUnguarded = true;
     public function getDescriptionForEvent(string $eventName): string
     {
-        return $this->name . " {$eventName} Oleh: " . auth()->user()->name;
+        return $this->title . " {$eventName} Oleh: " . auth()->user()->name;
     }
 
     public function getActivitylogOptions(): LogOptions

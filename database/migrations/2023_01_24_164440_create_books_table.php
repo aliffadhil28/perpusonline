@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('author');
-            $table->string('publisher');
-            $table->year('year');
-            $table->string('edition');
-            $table->integer('quantity');
-            $table->string('category')->nullable();
+            $table->string('title')->default('Default Title');
+            $table->string('author')->default('Mr. Author');
+            $table->string('publisher')->default('Pt. Publisher');
+            $table->year('year')->default('2012');
+            $table->string('edition')->default('1');
+            $table->integer('quantity')->default('2');
+            $table->string('category')->nullable()->default('Default category');
             $table->string('cover')->default('images/books/default.jpg');
             $table->timestamps();
         });
