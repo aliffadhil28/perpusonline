@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="row" style="font-family: 'Montserrat'; font-size: 140%; line-height: 24px;">
-                    <form action="{{route("profil.update")}}" method="POST">
+                    <form action="{{route("profil.update")}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         {{-- @method('put') --}}
                         <div class="col-10" style="margin-left:3%;margin-top:3%">

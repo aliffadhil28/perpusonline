@@ -30,7 +30,7 @@
                     <div class="row">
                         @foreach ($books as $book)
                             <div class="col-2 card card-book border-0 mb-3">
-                                <img src="{{ asset($book->cover) }}" class="card-img-top" alt="...">
+                                <img src="{{ asset('storage/covers/'.$book->cover) }}" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $book->title }}</h5>
                                     <p class="card-text">{{ $book->author }}</p>
@@ -50,7 +50,7 @@
                                 @foreach ($randomBooks as $book)
                                     <li class="splide__slide">
                                         <div class="card card-book border-0">
-                                            <img src="{{ asset($book->cover) }}" class="card-img-top" alt="...">
+                                            <img src="{{ asset('storage/covers/'.$book->cover) }}" class="card-img-top" alt="...">
                                             <div class="card-body">
                                                 <h5 class="card-title">{{ $book->title }}</h5>
                                                 <p class="card-text">{{ $book->author }}</p>
@@ -73,7 +73,7 @@
                                     @foreach ($books->where('category', $category->category)->take(15) as $book)
                                         <li class="splide__slide">
                                             <div class="card card-book border-0">
-                                                <img src="{{ asset($book->cover) }}" class="card-img-top" alt="...">
+                                                <img src="{{ asset('storage/covers/'.$book->cover) }}" class="card-img-top" alt="...">
                                                 <div class="card-body">
                                                     <h5 class="card-title">{{ $book->title }}</h5>
                                                     <p class="card-text">{{ $book->author }}</p>

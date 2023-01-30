@@ -47,6 +47,8 @@ Route::get('/admin_anggota', [App\Http\Controllers\UserController::class,'showUs
 Route::get('/admin_buku_tamu', [HomeController::class,'showGuestBook'])->name('admin_buku_tamu');
 Route::get('/admin_katalog', [HomeController::class,'showBook'])->name('admin_katalog');
 Route::post('tambah_buku', [HomeController::class,'storeBook'])->name('tambah_buku');
+Route::post('/edit_buku/{id}', [HomeController::class,'updateBook'])->name('edit_buku');
+Route::delete('/delete_buku/{id}', [HomeController::class,'destroyBook'])->name('delete_buku');
 
 
 Route::get('/admin_log_aktivitas', [App\Http\Controllers\HomeController::class, 'showActivity'])->name('admin.log');

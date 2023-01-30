@@ -13,10 +13,10 @@ class Book extends Model
     use HasFactory;
 
     protected $fillable = [
-        'cover',
+        'cover','title','year','author','publisher','edition','category','quantity',
     ];
 
-    protected static $logName = 'buku';
+    // protected static $logName = 'buku';
     // protected static $logUnguarded = true;
     public function getDescriptionForEvent(string $eventName): string
     {

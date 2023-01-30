@@ -9,7 +9,7 @@ use Spatie\Activitylog\Models\Activity;
 use Illuminate\Http\Request;
 use App\Http\Requests\BookRequest;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 
 class HomeController extends Controller
@@ -78,6 +78,7 @@ class HomeController extends Controller
             'year'   => 'required',
             'category'   => 'required',
             'quantity'   => 'required',
+            'edition' => 'required',
             'cover'     => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
@@ -88,9 +89,11 @@ class HomeController extends Controller
         //create book
         Book::create([
             'title'     => $request->title,
+            'author'   => $request->author,
             'publisher'   => $request->publisher,
             'year'   => $request->year,
             'quantity'   => $request->quantity,
+            'edition'   => $request->edition,
             'category'   => $request->category,
             'cover'     => $image->hashName(),
         ]);
@@ -125,4 +128,75 @@ class HomeController extends Controller
         $book = Book::all();
         return view('admin_katalog',compact('book'));
     }
+
+    public function destroyBook($id)
+    {
+        $book = Book::find($id);
+        Storage::delete('/public/covers/'.$book->cover);
+        $book->delete();
+
+        notify()->success('Buku Berhasil Dihapus');
+        return redirect()->back();
+
+        // return dd($book);
+    }
+
+    public function updateBook(Request $request, $id)
+    {
+        $book = Book::find($id);
+
+        $this->validate($request, [
+            'title'     => 'required|min:5',
+            'author'   => 'required',
+            'publisher'   => 'required',
+            'year'   => 'required',
+            'category'   => 'required',
+            'edition'   => 'required',
+            'quantity'   => 'required',
+            'cover'     => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $book->title = $request->title;
+        $book->author = $request->author;
+        $book->publisher = $request->publisher;
+        $book->year = $request->year;
+        $book->edition = $request->edition;
+        $book->category = $request->category;
+        $book->quantity = $request->quantity;
+
+        if ($request->hasFile('cover')) {
+            Storage::delete('public/covers/' . $book->cover);
+            $image = $request->file('cover');
+            $image->storeAs('public/covers', $image->hashName());
+            $book->cover = $image->hashName();
+        }
+
+        $book->save();
+
+        notify()->success('Buku Berhasil Diupdate');
+        return redirect()->back();
+        // $book = Book::find($id);
+        // $image = $request->file('cover');
+        // unlink($book->cover);
+        // $image->storeAs('public/cover', $image->hashName());
+        // $book->update([
+        //     'title' => $request->title,
+        //     'author' => $request->author,
+        //     'publisher' => $request->publisher,
+        //     'year' => $request->year,
+        //     'category' => $request->category,
+        //     'quantity' => $request->quantity,
+        //     'edition' => $request->edition,
+        //     'cover' => $image->hashName(),
+        // ]);
+
+        // $book->update($request->all());
+        // $book->save();
+
+        // notify()->success('Buku Berhasil Di update');
+        // return redirect()->back();
+
+        return dd($book);
+    }
+
 }

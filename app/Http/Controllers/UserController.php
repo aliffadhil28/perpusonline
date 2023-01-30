@@ -39,20 +39,26 @@ class UserController extends Controller
     {
         $user = auth()->user();
         if($request->hasFile('foto_profil')){
-            $foto_profil = $request->file('foto_profil');
-            $nama_foto = time().'.'.$foto_profil->getClientOriginalExtension();
-            $path = 'public/foto_profil/';
-            $foto_profil->move($path, $nama_foto);
-            $user->foto_profil = $nama_foto;
-            $user->save();
+            $image = $request->file('foto_profil');
+            $image->storeAs('public/foto_profil', $image->hashName());
+            $user->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'nik' => $request->nik,
+                'alamat' => $request->alamat,
+                'no_hp' => $request->no_hp,
+                'foto_profil' => $image->hashName(),
+            ]);
+        }else{
+            $user->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'nik' => $request->nik,
+                'alamat' => $request->alamat,
+                'no_hp' => $request->no_hp,
+                'foto_profil' => $image->hashName(),
+            ]);
         }
-        $user->update([
-            'name' => $request->name,
-            'email' => $request->email,
-            'nik' => $request->nik,
-            'alamat' => $request->alamat,
-            'no_hp' => $request->no_hp,
-        ]);
 
         return view('profil')->with('message','Your Profil had been updated');
     }

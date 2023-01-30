@@ -47,7 +47,7 @@
                             <div class="user-menu d-flex">
                                 <div class="user-img d-flex align-items-center">
                                     <div class="avatar avatar-md">
-                                        <img src="{{ asset(auth()->user()->foto_profil) }}" alt="Foto Profil"
+                                        <img src="{{ asset('storage/foto_profil/'.auth()->user()->foto_profil) }}" alt="Foto Profil"
                                             class="rounded-circle">
                                     </div>
                                 </div>
