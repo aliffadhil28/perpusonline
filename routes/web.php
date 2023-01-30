@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\PeminjamanController;
+use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -25,6 +26,7 @@ Route::middleware('auth')->group(function () {
     Route::prefix('admin')->group(function () {
         Route::resource('peminjaman', PeminjamanController::class);
         Route::patch('peminjaman/{peminjaman}/return', [PeminjamanController::class, 'return'])->name('peminjaman.return');
+        Route::resource('users', AdminUserController::class);
     });
 });
 
