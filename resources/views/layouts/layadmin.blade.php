@@ -60,8 +60,8 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Daftar Tabel</h6>
                         <a class="collapse-item" href="admin_katalog">Katalog Buku</a>
-                        <a class="collapse-item nav-item @if (Request::is('admin_anggota*')) active @endif"
-                            href="{{ route('admin_anggota') }}">Daftar Anggota</a>
+                        <a class="collapse-item nav-item @if (Request::is('admin/users*')) active @endif"
+                            href="{{ route('users.index') }}">Daftar Anggota</a>
                         <a class="collapse-item" href="admin_buku_tamu">Buku Tamu</a>
                         <a class="collapse-item @if (Request::is('admin/peminjaman*')) active @endif"
                             href="{{ route('peminjaman.index') }}">Peminjaman</a>
@@ -284,7 +284,8 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span
                                     class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->name }}</span>
-                                <img class="img-profile rounded-circle" src="{{ asset('img/undraw_profile.svg') }}">
+                                <img class="img-profile rounded-circle"
+                                    src="{{ asset(auth()->user()->foto_profil) }}">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -382,6 +383,7 @@
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
     @notifyJs
+    @yield('js')
 </body>
 
 </html>
