@@ -15,14 +15,14 @@
                         @endif
                         {{-- <img src="{{asset(auth()->user()->foto_profil)}}" width="100" alt="gambar profil" style="border-radius: 20px"> --}}
                     </div>
-                    <div class="col-5" style="margin: 3%;margin-top:12.5%">
+                    <div class="col-2" style="margin: 3%;">
                         <p style="font-family: 'Montserrat';color: #FFFFFF;font-size:150%">
                             <b>Nama</b>
                         </p>
-                        <p style="font-family: 'Montserrat';color: #FFFFFF;margin-top:-20%;font-size:125%">
+                        <p style="font-family: 'Montserrat';color: #FFFFFF;font-size:150%">
                             NIK
                         </p>
-                        <p style="font-family: 'Montserrat';color: #FFFFFF;margin-top:-20%;font-size:125%">
+                        <p style="font-family: 'Montserrat';color: #FFFFFF;font-size:150%">
                             No.Hp
                         </p>
                     </div>
