@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\PeminjamanController;
+use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -21,10 +22,12 @@ Route::middleware('auth')->group(function () {
     Route::post('guestbook', [HomeController::class, 'storeGuestBook'])->name('guestbook');
     Route::get('/katalog', [HomeController::class, 'showKatalog'])->name('katalog');
     Route::get('/buku-pinjaman', [HomeController::class, 'showBukuPinjaman'])->name('buku-pinjaman');
+    Route::put('/buku-pinjaman/{buku}', [HomeController::class, 'pinjamBuku'])->name('pinjam-buku');
 
-    Route::prefix('admin')->group(function () {
+    Route::prefix('admin')->middleware('admin')->group(function () {
         Route::resource('peminjaman', PeminjamanController::class);
         Route::patch('peminjaman/{peminjaman}/return', [PeminjamanController::class, 'return'])->name('peminjaman.return');
+        Route::resource('users', AdminUserController::class);
     });
 });
 
@@ -41,17 +44,15 @@ Route::get('/edit_profil', [App\Http\Controllers\UserController::class, 'editPro
 
 Route::get('/admin', function () {
     return view('admin');
-})->name('admin');
+})->middleware('admin')->name('admin');
 
-Route::get('/admin_anggota', [App\Http\Controllers\UserController::class,'showUsers'])->name('admin_anggota');
-Route::get('/admin_buku_tamu', [HomeController::class,'showGuestBook'])->name('admin_buku_tamu');
-Route::get('/admin_katalog', [HomeController::class,'showBook'])->name('admin_katalog');
-Route::post('tambah_buku', [HomeController::class,'storeBook'])->name('tambah_buku');
-Route::post('/edit_buku/{id}', [HomeController::class,'updateBook'])->name('edit_buku');
-Route::delete('/delete_buku/{id}', [HomeController::class,'destroyBook'])->name('delete_buku');
+Route::get('/admin_buku_tamu', [HomeController::class,'showGuestBook'])->middleware('admin')->name('admin_buku_tamu');
+Route::get('/admin_katalog', [HomeController::class,'showBook'])->middleware('admin')->name('admin_katalog');
+Route::post('tambah_buku', [HomeController::class,'storeBook'])->middleware('admin')->name('tambah_buku');
+Route::post('/edit_buku/{id}', [HomeController::class,'updateBook'])->middleware('admin')->name('edit_buku');
+Route::delete('/delete_buku/{id}', [HomeController::class,'destroyBook'])->middleware('admin')->name('delete_buku');
 
-
-Route::get('/admin_log_aktivitas', [App\Http\Controllers\HomeController::class, 'showActivity'])->name('admin.log');
+Route::get('/admin_log_aktivitas', [App\Http\Controllers\HomeController::class, 'showActivity'])->middleware('admin')->name('admin.log');
 
 Route::get('/form_buku_tamu', function () {
     return view('form_buku_tamu');

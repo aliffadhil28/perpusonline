@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Models\Collection;
 use App\Models\GuestBook;
+use App\Models\User;
+use Exception;
 use Spatie\Activitylog\Models\Activity;
 use Illuminate\Http\Request;
 use App\Http\Requests\BookRequest;
@@ -177,4 +179,37 @@ class HomeController extends Controller
         return redirect()->back();
     }
 
+    public function pinjamBuku($id)
+    {
+        $book = Book::findOrFail($id);
+
+        if ($book->quantity <= 0) {
+            notify()->error('Stok Buku Habis');
+            return redirect()->back();
+        }
+
+        DB::beginTransaction();
+
+        try {
+            $collection = new Collection();
+            $collection->user_id = auth()->user()->id;
+            $collection->book_id = $book->id;
+            $collection->borrowed_at = now();
+            $collection->returned_at = now()->addDays(3);
+            $collection->is_returned = false;
+            $collection->save();
+
+            $book->quantity -= 1;
+            $book->save();
+
+            DB::commit();
+
+            notify()->success('Buku Berhasil Dipinjam');
+            return redirect()->route('buku-pinjaman');
+        } catch (Exception $e) {
+            DB::rollback();
+            notify()->error('Terjadi Kesalahan');
+            return redirect()->back();
+        }
+    }
 }

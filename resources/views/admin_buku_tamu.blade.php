@@ -25,13 +25,6 @@
                         <th>Kelas</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>Nama</th>
-                        <th>Tanggal_Akses</th>
-                        <th>Kelas</th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     @foreach ($gb as $bt)
                         <tr>

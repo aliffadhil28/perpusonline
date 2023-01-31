@@ -59,6 +59,29 @@ class User extends Authenticatable
     protected static $logUnguarded = true;
     public function getDescriptionForEvent(string $eventName): string
     {
-        return $this->name . " {$eventName} Oleh: " . auth()->user()->name;
+        if($eventName == 'created') {
+            return "User baru dengan nama " . $this->name . " telah terdaftar";
+            } else {
+            return $this->name . " {$eventName} Oleh: " . auth()->user()->name;
+        }
+    }
+
+    public function getFormattedPhoneNumberAttribute()
+    {
+        $phoneNumber = $this->no_hp;
+
+        if (substr($phoneNumber, 0, 2) == '08') {
+            $phoneNumber = '62' . substr($phoneNumber, 1);
+        }
+
+        if (substr($phoneNumber, 0, 1) == '8') {
+            $phoneNumber = '62' . $phoneNumber;
+        }
+
+        if (substr($phoneNumber, 0, 3) == '+62') {
+            $phoneNumber = substr($phoneNumber, 1);
+        }
+
+        return $phoneNumber;
     }
 }
