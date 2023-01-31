@@ -37,7 +37,11 @@
                                 </div>
                                 <div class="card-footer">
                                     <a href="#" class="btn btn-outline-secondary">Detail Buku</a>
-                                    <a href="#" class="btn btn-primary">Pinjam</a>
+                                    <form action="{{ route('pinjam-buku', $book->id) }}" method="post">
+                                        @csrf
+                                        @method('put')
+                                        <button type="submit" class="btn btn-primary">Pinjam</button>
+                                    </form>
                                 </div>
                             </div>
                         @endforeach
@@ -57,7 +61,11 @@
                                             </div>
                                             <div class="card-footer">
                                                 <a href="#" class="btn btn-outline-secondary">Detail Buku</a>
-                                                <a href="#" class="btn btn-primary">Pinjam</a>
+                                                <form action="{{ route('pinjam-buku', $book->id) }}" method="post">
+                                                    @csrf
+                                                    @method('put')
+                                                    <button type="submit" class="btn btn-primary">Pinjam</button>
+                                                </form>
                                             </div>
                                         </div>
                                     </li>
@@ -80,7 +88,11 @@
                                                 </div>
                                                 <div class="card-footer">
                                                     <a href="#" class="btn btn-outline-secondary">Detail Buku</a>
-                                                    <a href="#" class="btn btn-primary">Pinjam</a>
+                                                    <form action="{{ route('pinjam-buku', $book->id) }}" method="post">
+                                                        @csrf
+                                                        @method('put')
+                                                        <button type="submit" class="btn btn-primary">Pinjam</button>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </li>

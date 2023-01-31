@@ -22,6 +22,7 @@ Route::middleware('auth')->group(function () {
     Route::post('guestbook', [HomeController::class, 'storeGuestBook'])->name('guestbook');
     Route::get('/katalog', [HomeController::class, 'showKatalog'])->name('katalog');
     Route::get('/buku-pinjaman', [HomeController::class, 'showBukuPinjaman'])->name('buku-pinjaman');
+    Route::put('/buku-pinjaman/{buku}', [HomeController::class, 'pinjamBuku'])->name('pinjam-buku');
 
     Route::prefix('admin')->middleware('admin')->group(function () {
         Route::resource('peminjaman', PeminjamanController::class);

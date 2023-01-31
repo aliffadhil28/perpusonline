@@ -6,6 +6,7 @@ use App\Models\Book;
 use App\Models\Collection;
 use App\Models\GuestBook;
 use App\Models\User;
+use Exception;
 use Spatie\Activitylog\Models\Activity;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -93,5 +94,39 @@ class HomeController extends Controller
     {
         $bt = GuestBook::all();
         return view('admin_buku_tamu',compact('bt'));
+    }
+
+    public function pinjamBuku($id)
+    {
+        $book = Book::findOrFail($id);
+
+        if ($book->quantity <= 0) {
+            notify()->error('Stok Buku Habis');
+            return redirect()->back();
+        }
+
+        DB::beginTransaction();
+
+        try {
+            $collection = new Collection();
+            $collection->user_id = auth()->user()->id;
+            $collection->book_id = $book->id;
+            $collection->borrowed_at = now();
+            $collection->returned_at = now()->addDays(7);
+            $collection->is_returned = false;
+            $collection->save();
+
+            $book->quantity -= 1;
+            $book->save();
+
+            DB::commit();
+
+            notify()->success('Buku Berhasil Dipinjam');
+            return redirect()->route('buku-pinjaman');
+        } catch (Exception $e) {
+            DB::rollback();
+            notify()->error('Terjadi Kesalahan');
+            return redirect()->back();
+        }
     }
 }
