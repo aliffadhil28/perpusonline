@@ -50,7 +50,8 @@
                                                 Action
                                             </button>
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#editBukuModal">Edit Katalog</a>
+                                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                        data-bs-target="#editBukuModal">Edit Katalog</a>
                                                 <li><a class="dropdown-item" href="#"
                                                         onclick="event.preventDefault();
                                                     document.getElementById('delete-book-{{ $buku->id }}').submit();">
@@ -172,7 +173,8 @@
 
                                 </div>
                                 <div class="form mt-4">
-                                    <form method="POST" action="{{ route('edit_buku',['id' => $buku->id]) }}" enctype="multipart/form-data">
+                                    <form method="POST" action="{{ route('edit_buku', ['id' => $buku->id]) }}"
+                                        enctype="multipart/form-data">
                                         @csrf
                                         <div class="mb-3">
                                             <label for="title" class="form-label">Judul Buku *</label>
@@ -181,8 +183,8 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for="author" class="form-label">Author *</label>
-                                            <input type="text" class="form-control" name="author" placeholder="Author"
-                                                required>
+                                            <input type="text" class="form-control" name="author"
+                                                placeholder="Author" required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="publisher" class="form-label">Publisher *</label>
@@ -191,18 +193,18 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for="year" class="form-label">Tahun *</label>
-                                            <input type="string" class="form-control" name="year" placeholder="Tahun"
-                                                required>
+                                            <input type="string" class="form-control" name="year"
+                                                placeholder="Tahun" required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="edition" class="form-label">Edisi *</label>
-                                            <input type="text" class="form-control" name="edition" placeholder="Edisi"
-                                                required>
+                                            <input type="text" class="form-control" name="edition"
+                                                placeholder="Edisi" required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="quantity" class="form-label">Jumlah *</label>
-                                            <input type="number" class="form-control" name="quantity" placeholder="Jumlah"
-                                                required>
+                                            <input type="number" class="form-control" name="quantity"
+                                                placeholder="Jumlah" required>
                                         </div>
                                         <div class="mb-3">
                                             <label for="category" class="form-label">Kategori *</label>

@@ -10,6 +10,8 @@
     <meta name="author" content="">
 
     <title>@yield('title') | {{ config('app.name', 'Anggota') }}</title>
+    {{-- Datatable CDN --}}
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -382,6 +384,27 @@
 
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    {{-- <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script> --}}
+
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js"></script>
+
+    <script>
+        $('#dataTable').dataTable({
+            paging: false,
+            ordering: false,
+            info: false,
+            searching: true,
+            dom: 'Bfrtip',
+            buttons: [
+                { "extend": 'excel', "text":'Backup Data',"className": 'btn btn-success btn-xs' }
+            ],
+        });
+    </script>
     @notifyJs
     @yield('js')
 </body>
