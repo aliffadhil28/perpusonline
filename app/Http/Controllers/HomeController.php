@@ -175,28 +175,6 @@ class HomeController extends Controller
 
         notify()->success('Buku Berhasil Diupdate');
         return redirect()->back();
-        // $book = Book::find($id);
-        // $image = $request->file('cover');
-        // unlink($book->cover);
-        // $image->storeAs('public/cover', $image->hashName());
-        // $book->update([
-        //     'title' => $request->title,
-        //     'author' => $request->author,
-        //     'publisher' => $request->publisher,
-        //     'year' => $request->year,
-        //     'category' => $request->category,
-        //     'quantity' => $request->quantity,
-        //     'edition' => $request->edition,
-        //     'cover' => $image->hashName(),
-        // ]);
-
-        // $book->update($request->all());
-        // $book->save();
-
-        // notify()->success('Buku Berhasil Di update');
-        // return redirect()->back();
-
-        return dd($book);
     }
 
 }
