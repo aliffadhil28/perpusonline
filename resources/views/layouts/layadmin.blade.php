@@ -285,7 +285,7 @@
                                 <span
                                     class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->name }}</span>
                                 <img class="img-profile rounded-circle"
-                                    src="{{ asset(auth()->user()->foto_profil) }}">
+                                    src="{{ asset('/storage/foto_profil/' . auth()->user()->foto_profil) }}">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

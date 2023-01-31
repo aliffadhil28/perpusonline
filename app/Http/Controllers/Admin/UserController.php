@@ -8,6 +8,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -45,7 +46,8 @@ class UserController extends Controller
             $user->role = $request->role;
 
             $hashName = $request->foto_profil->hashName();
-            $user->foto_profil = $request->foto_profil->move('img', $hashName);
+            $request->foto_profil->storeAs('public/foto_profil', $hashName);
+            $user->foto_profil = $hashName;
 
             $user->save();
 
@@ -97,11 +99,12 @@ class UserController extends Controller
             }
 
             if ($request->foto_profil) {
-                if ($user->foto_profil) {
-                    unlink($user->foto_profil);
+                if (Storage::exists('public/foto_profil/'.$user->foto_profil)) {
+                    Storage::delete('public/foto_profil/'.$user->foto_profil);
                 }
                 $hashName = $request->foto_profil->hashName();
-                $user->foto_profil = $request->foto_profil->move('img', $hashName);
+                $request->foto_profil->storeAs('public/foto_profil', $hashName);
+                $user->foto_profil = $hashName;
             }
 
             $user->save();
@@ -120,8 +123,8 @@ class UserController extends Controller
     public function destroy($id)
     {
         $user = User::findOrFail($id);
-        if ($user->foto_profil) {
-            unlink($user->foto_profil);
+        if (Storage::exists('public/foto_profil/'.$user->foto_profil)) {
+            Storage::delete('public/foto_profil/'.$user->foto_profil);
         }
         $user->delete();
 

@@ -89,7 +89,8 @@
                                 @enderror
                             </div>
                             <div class="form-group col-2">
-                                <img src="{{ asset($user->foto_profil) }}" class="w-100" alt="">
+                                <img src="{{ asset('/storage/foto_profil/' . $user->foto_profil) }}" class="w-100"
+                                    alt="">
                             </div>
                             <div class="form-group col-10">
                                 <label for="foto_profil">Foto Profil</label>
