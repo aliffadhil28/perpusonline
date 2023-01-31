@@ -112,7 +112,7 @@ class HomeController extends Controller
             $collection->user_id = auth()->user()->id;
             $collection->book_id = $book->id;
             $collection->borrowed_at = now();
-            $collection->returned_at = now()->addDays(7);
+            $collection->returned_at = now()->addDays(3);
             $collection->is_returned = false;
             $collection->save();
 
