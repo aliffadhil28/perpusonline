@@ -15,14 +15,14 @@
                         @endif
                         {{-- <img src="{{asset(auth()->user()->foto_profil)}}" width="100" alt="gambar profil" style="border-radius: 20px"> --}}
                     </div>
-                    <div class="col-5" style="margin: 3%;margin-top:12.5%">
+                    <div class="col-2" style="margin: 3%;">
                         <p style="font-family: 'Montserrat';color: #FFFFFF;font-size:150%">
                             <b>Nama</b>
                         </p>
-                        <p style="font-family: 'Montserrat';color: #FFFFFF;margin-top:-20%;font-size:125%">
+                        <p style="font-family: 'Montserrat';color: #FFFFFF;font-size:150%">
                             NIK
                         </p>
-                        <p style="font-family: 'Montserrat';color: #FFFFFF;margin-top:-20%;font-size:125%">
+                        <p style="font-family: 'Montserrat';color: #FFFFFF;font-size:150%">
                             No.Hp
                         </p>
                     </div>
@@ -47,27 +47,27 @@
                     </div>
                 </div>
                 <div class="row" style="font-family: 'Montserrat'; font-size: 140%; line-height: 24px;">
-                    <div class="col-10" style="margin-left:3%;margin-top:3%">
+                    <div class="col-10" style="margin-left:3%;margin-top:2%">
                         <p>
                             <b> Nama Lengkap</b> <br> {{ auth()->user()->name }}
                         </p>
                     </div>
-                    <div class="col-10" style="margin-left:3%">
+                    <div class="col-10" style="margin-left:3%;margin-top:2%">
                         <p>
                             <b>Email</b> <br> {{ auth()->user()->email }}
                         </p>
                     </div>
-                    <div class="col-10" style="margin-left:3%">
+                    <div class="col-10" style="margin-left:3%;margin-top:2%">
                         <p>
                             <b>NIK</b> <br> {{ auth()->user()->nik }}
                         </p>
                     </div>
-                    <div class="col-10" style="margin-left:3%">
+                    <div class="col-10" style="margin-left:3%;margin-top:2%">
                         <p>
                             <b>No. Hp</b> <br> {{ auth()->user()->no_hp }}
                         </p>
                     </div>
-                    <div class="col-10" style="margin-left:3%">
+                    <div class="col-10" style="margin-left:3%;margin-top:2%">
                         <p>
                             <b>Alamat</b> <br> {{ auth()->user()->alamat }}
                         </p>
