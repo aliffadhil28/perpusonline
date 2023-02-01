@@ -82,6 +82,7 @@ class DummySeeder extends Seeder
                 'password' => bcrypt('admin'),
                 'nik' => '1234567890123456',
                 'no_hp' => '081234567890',
+                'role' => 'admin',
                 'alamat' => 'Jl. Admin',
                 'foto_profil' => 'https://zuramai.github.io/mazer/demo/assets/images/faces/1.jpg',
             ]
