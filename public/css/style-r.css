@@ -98,7 +98,6 @@ border: none;
 
   .form-group .sign-in {
     box-sizing: border-box;
-
 width: 700px;
 height: 56px;
 margin-top: 60px;
@@ -109,6 +108,14 @@ border-radius: 8px;
     
   }
   
+
+  .form-group a{
+    width: 700px;
+    height: 56px;
+    margin-top: 60px;
+    text-decoration: none;
+  }
+
   .form-label {
     display: block;
     font-size: 18px;

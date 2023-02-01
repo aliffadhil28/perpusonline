@@ -94,11 +94,13 @@ border-radius: 8px;
     
 }
 
-.ellipse .gambar{
-     width: 340px;
-     height: 400px;
-     margin: 25% 12% 12% 25%;
-    
+.login-right img{
+    width: 30%;
+    height: auto;
+    position: relative;
+    top: -180%;
+    left: 100%;
+    transform: translate(-180%, -180%);
 }
 
 .ellipse{

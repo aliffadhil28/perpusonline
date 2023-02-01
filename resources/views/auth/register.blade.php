@@ -244,8 +244,11 @@
                             <button type="submit" class="sign-in btn btn-primary">
                                 {{ __('Register') }}
                             </button>
+                            
                         </div>
-
+                            <div class="form-group">
+                            <a href="{{ route('login') }}">Kembali</a>
+                            </div>
                     </div>
                     <!-- <span class="d-inline text-center">Sudah punya akun? <a href="" class="sign-up d-inline text-decoration-none"> Masuk</a></span> -->
                 </div>

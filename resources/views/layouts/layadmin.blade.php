@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>@yield('title') | {{ config('app.name', 'Anggota') }}</title>
+    <link rel="icon" type="x-icon" href="{{ asset('img/logo.png') }}">
+    <title>@yield('title') {{ config ('PerpusOnline') }}</title>
     {{-- Datatable CDN --}}
     <link rel="stylesheet" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
 
