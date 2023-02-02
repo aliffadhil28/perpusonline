@@ -37,10 +37,10 @@
                                 data-bs-target="#bukuTamuModal">Buku Tamu</a>
                         </li>
                         <li class="nav-item @if (Request::is('katalog*')) active @endif">
-                            <a class="nav-link" href="{{ route('katalog') }}">Koleksi Buku</a>
+                            <a class="nav-link" href="{{ route('katalog') }}">Perpustakaan</a>
                         </li>
                         <li class="nav-item @if (Request::is('buku-pinjaman*')) active @endif">
-                            <a class="nav-link" href="{{ route('buku-pinjaman') }}">Perpustakaan</a>
+                            <a class="nav-link" href="{{ route('buku-pinjaman') }}">Koleksi Buku</a>
                         </li>
                     </ul>
                     <div class="nav navbar-nav ms-auto w-100 justify-content-end">

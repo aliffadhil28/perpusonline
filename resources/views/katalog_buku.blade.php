@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Koleksi Buku')
+@section('title', 'Perpustakaan')
 
 @section('css')
     <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet" />
