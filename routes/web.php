@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Auth;
 Route::middleware('auth')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('index');
     Route::post('guestbook', [HomeController::class, 'storeGuestBook'])->name('guestbook');
-    Route::get('/katalog', [HomeController::class, 'showKatalog'])->name('katalog');
+    Route::get('/perpustakaan', [HomeController::class, 'showKatalog'])->name('perpustakaan');
     Route::get('/buku-pinjaman', [HomeController::class, 'showBukuPinjaman'])->name('buku-pinjaman');
     Route::put('/buku-pinjaman/{buku}', [HomeController::class, 'pinjamBuku'])->name('pinjam-buku');
 

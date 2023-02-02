@@ -36,11 +36,11 @@
                             <a class="nav-link" href="#" data-bs-toggle="modal"
                                 data-bs-target="#bukuTamuModal">Buku Tamu</a>
                         </li>
-                        <li class="nav-item @if (Request::is('katalog*')) active @endif">
-                            <a class="nav-link" href="{{ route('katalog') }}">Perpustakaan</a>
+                        <li class="nav-item @if (Request::is('perpustakaan*')) active @endif">
+                            <a class="nav-link" href="{{ route('perpustakaan') }}">Perpustakaan</a>
                         </li>
                         <li class="nav-item @if (Request::is('buku-pinjaman*')) active @endif">
-                            <a class="nav-link" href="{{ route('buku-pinjaman') }}">Koleksi Buku</a>
+                            <a class="nav-link" href="{{ route('buku-pinjaman') }}">Koleksi</a>
                         </li>
                     </ul>
                     <div class="nav navbar-nav ms-auto w-100 justify-content-end">
