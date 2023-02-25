@@ -35,7 +35,7 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin">
-                <div class="sidebar-brand-text mx-3">Admin Perpus SMK 5 Kepanjen <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">Admin Perpus SMK Muhammdiyah 5 Kepanjen</div>
             </a>
 
             <!-- Divider -->

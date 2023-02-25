@@ -28,7 +28,7 @@
                         @csrf
                         <div class="header">
                             <h1>Halo!</h1>
-                            <p>Masuk Ke Perpus Online</p>
+                            <p>Masuk Ke Perpustakaan SMK Muhammadiyah 5 Kepanjen</p>
                         </div>
                         <div class="login-form-e">
                             <input type="email" id="exampleInputEmail1" aria-describedby="emailHelp"

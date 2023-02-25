@@ -53,7 +53,7 @@
             <div class="box-about">
                 <div class="box">
                     <h1>
-                        SMK 5 Muhammadiyah Kepanjan Perpustakaan Online
+                        SMK Muhammadiyah 5 Kepanjan Perpustakaan Online
                     </h1>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, praesentium quaerat. Amet rerum
